@@ -1,5 +1,11 @@
 import { MainVisual } from "./MainVisual";
+import { Profile } from "./Profile";
 
 export const Template: React.FC = () => {
-  return <MainVisual />;
+  return (
+    <main>
+      <MainVisual />
+      <Profile />
+    </main>
+  );
 };
