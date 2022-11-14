@@ -1,4 +1,4 @@
-import  Head  from 'next/head'
+import Head from "next/head";
 
 export const AppHead: React.FC = () => {
   return (
@@ -8,5 +8,4 @@ export const AppHead: React.FC = () => {
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );
-}
-
+};
