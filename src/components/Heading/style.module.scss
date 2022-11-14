@@ -9,6 +9,8 @@
   text-align: center;
   padding: $side-padding-pc;
   font-family: "Heebo";
+  // memo: SCSS のネスト構文は使っても使わなくても `styles.` 直下に生えるため実質意味がないが、
+  // 可読性を考慮して使うことにする。
   &.yellow {
     color: $yellow;
     &::selection {

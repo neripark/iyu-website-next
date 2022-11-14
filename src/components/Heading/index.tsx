@@ -1,5 +1,4 @@
 import styles from "./style.module.scss";
-import { ReactElement } from "react";
 
 interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
   color: "yellow" | "blue";
