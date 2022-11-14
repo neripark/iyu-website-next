@@ -1,0 +1,18 @@
+// for media query
+@mixin mq($breakpoint: sm) {
+  @media (#{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+// breakpoints
+// todo: max と min を両方使っていてカオスなのでリファクタする
+$breakpoints: (
+  "ssm": "max-width: 450px",
+  // mixin側のデフォルト値
+  "sm": "max-width: 600px",
+  // vue-carouselの調整
+  "carousel": "max-width: 700px",
+  "tb": "max-width: 840px",
+  "fhd": "min-width: 1500px",
+);

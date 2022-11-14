@@ -8,7 +8,8 @@ export const MainVisual: React.FC = () => {
       </h1>
       {/* todo: */}
       {/* <information-summary :live-details="liveDetails" /> */}
-      {/* todo: PCのときだけ動画をロードできているか確認 */}
+      {/* todo: PCのときだけ動画をロードできているか確認。なぜかローカルだとNetworkタブに出てこない */}
+      {/* できていなければ OnlyClient 的なコンポーネントを実装する or 使う */}
       {typeof window !== undefined && (
         <video
           className={styles["bg-movie"]}
