@@ -1,11 +1,17 @@
+import { Heading } from "../../components/Heading";
 import styles from "./style.module.scss";
 import Image from "next/image";
 
 export const Profile: React.FC = () => {
   return (
     <section className={styles["profile"]}>
-      {/* todo */}
-      {/* <heading className="heading" text="Profile" color="blue" /> */}
+      <Heading
+        className={styles["heading"]}
+        color="blue"
+        data-testid="hogehoge"
+      >
+        Profile
+      </Heading>
       <div className={styles["wrap-photo"]}>
         <Image
           className={styles["profile-photo"]}
