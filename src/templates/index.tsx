@@ -1,4 +1,5 @@
 import { MainVisual } from "./MainVisual";
+import { MusicVideo } from "./MusicVideo";
 import { Profile } from "./Profile";
 
 export const Template: React.FC = () => {
@@ -6,6 +7,7 @@ export const Template: React.FC = () => {
     <main>
       <MainVisual />
       <Profile />
+      <MusicVideo />
     </main>
   );
 };
