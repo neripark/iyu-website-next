@@ -4,11 +4,15 @@ import { Live } from "./Live";
 import { MainVisual } from "./MainVisual";
 import { MusicVideo } from "./MusicVideo";
 import { Profile } from "./Profile";
+import { SiteFloatingNavigation } from "./SiteFloatingNavigation";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const Template: React.FC = () => {
   return (
     <main>
+      <header>
+        <SiteFloatingNavigation />
+      </header>
       <MainVisual />
       <Profile />
       <MusicVideo />

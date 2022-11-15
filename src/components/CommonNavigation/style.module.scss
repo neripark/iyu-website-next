@@ -1,0 +1,83 @@
+@import "variables";
+@import "functions";
+
+.anchor-list {
+  color: $white;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  @include mq(tb) {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: $main-blue; // 仮
+    z-index: 0;
+  }
+}
+
+.anchor-item {
+  color: $white;
+  text-align: center;
+  width: 20%;
+  @include mq(tb) {
+    width: 100%;
+    text-align: center;
+  }
+  &:not(:first-child) {
+    border-left: 1px solid $white;
+    @include mq(tb) {
+      border: none;
+    }
+  }
+}
+
+.anchor {
+  color: $white;
+  display: block;
+  font-size: 20px;
+  position: relative;
+  letter-spacing: 0.2em;
+  user-select: none;
+  cursor: pointer;
+  .string {
+    display: inline-block;
+    position: relative;
+    padding: 0 3px 0 7px;
+    // hoverすると現れる横棒
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      z-index: 1;
+      background: $yellow;
+      transition: 0.2s;
+    }
+  }
+  &:hover {
+    .string {
+      color: $yellow;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  @include mq(tb) {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    &::after {
+      display: none;
+    }
+  }
+}
