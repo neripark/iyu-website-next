@@ -1,6 +1,6 @@
-import { Heading } from "../../components/Heading";
 import { Description } from "./Description";
 import styles from "./style.module.scss";
+import { Heading } from "@/components/Heading";
 import Image from "next/image";
 
 export const Profile: React.FC = () => {

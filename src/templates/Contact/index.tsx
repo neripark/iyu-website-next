@@ -1,8 +1,8 @@
-import { Heading } from "../../components/Heading";
-import { Input } from "../../components/Input";
-import { Select } from "../../components/Select";
-import { Textarea } from "../../components/Textarea";
 import styles from "./style.module.scss";
+import { Heading } from "@/components/Heading";
+import { Input } from "@/components/Input";
+import { Select } from "@/components/Select";
+import { Textarea } from "@/components/Textarea";
 
 export const Contact: React.FC = () => {
   // todo: 実装する

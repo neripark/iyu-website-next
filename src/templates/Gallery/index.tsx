@@ -1,5 +1,5 @@
-import { Heading } from "../../components/Heading";
 import styles from "./style.module.scss";
+import { Heading } from "@/components/Heading";
 
 const carouselImages = [
   {
