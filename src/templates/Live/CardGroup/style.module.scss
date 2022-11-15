@@ -1,0 +1,12 @@
+@import "variables";
+@import "functions";
+
+.live-cards {
+  max-width: 1000px;
+  margin: 15px auto 0;
+  padding-bottom: $side-padding-pc;
+  @include mq() {
+    padding-bottom: $side-padding-sp;
+    margin: 40px auto 0;
+  }
+}

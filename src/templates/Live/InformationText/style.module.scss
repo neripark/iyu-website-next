@@ -1,0 +1,31 @@
+@import "variables";
+@import "functions";
+
+// todo: 共通化する
+@mixin selection-color() {
+  &::selection {
+    background: $yellow-rgba;
+    color: $main-blue;
+  }
+}
+
+.lead {
+  color: $white;
+  text-align: center;
+  line-height: 2;
+  @include selection-color();
+  @include mq() {
+    line-height: 1.5;
+  }
+}
+
+// todo: componentに切り出す
+.text-link {
+  color: $white;
+  text-decoration: underline;
+  margin: 0 0.1em;
+  @include selection-color();
+  &:hover {
+    text-decoration: none;
+  }
+}
