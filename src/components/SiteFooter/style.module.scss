@@ -1,0 +1,25 @@
+@import "variables";
+@import "functions";
+
+.site-footer {
+  color: $white;
+  width: 100%;
+  padding: 40px $side-padding-pc;
+  @include mq() {
+    padding: 30px $side-padding-sp;
+  }
+  background-color: $main-blue;
+  border-top: 1px solid $white;
+}
+.contact-list {
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap-copyright {
+  color: $white;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+}

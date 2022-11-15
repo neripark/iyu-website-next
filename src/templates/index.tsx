@@ -1,3 +1,4 @@
+import { SiteFooter } from "../components/SiteFooter";
 import { Contact } from "./Contact";
 import { Gallery } from "./Gallery";
 import { Live } from "./Live";
@@ -14,6 +15,7 @@ export const Template: React.FC = () => {
       <Live />
       <Gallery />
       <Contact />
+      <SiteFooter />
     </main>
   );
 };
