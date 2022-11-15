@@ -1,3 +1,4 @@
+import { Contact } from "./Contact";
 import { Gallery } from "./Gallery";
 import { Live } from "./Live";
 import { MainVisual } from "./MainVisual";
@@ -12,6 +13,7 @@ export const Template: React.FC = () => {
       <MusicVideo />
       <Live />
       <Gallery />
+      <Contact />
     </main>
   );
 };
