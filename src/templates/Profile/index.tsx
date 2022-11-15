@@ -1,4 +1,5 @@
 import { Heading } from "../../components/Heading";
+import { Description } from "./Description";
 import styles from "./style.module.scss";
 import Image from "next/image";
 
@@ -21,8 +22,7 @@ export const Profile: React.FC = () => {
           alt="profile photo"
         />
       </div>
-      {/* todo */}
-      {/* <profile-description /> */}
+      <Description />
     </section>
   );
 };
