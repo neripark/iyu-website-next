@@ -12,7 +12,7 @@ export const InformationSummary: React.FC = () => {
           <h3 className={styles["head"]}>Live Schedule</h3>
           {liveDetails.length > 0 ? (
             liveDetails.map((element) => (
-              <p className={styles["lead"]}>
+              <p className={styles["lead"]} key={element.date}>
                 {/* {{ $dayjs(live.date).format('YYYY/M/D (ddd)') }}<br />{{ live.place }} */}
                 {/* todo: フォーマットする */}
                 {element.date} <br />
