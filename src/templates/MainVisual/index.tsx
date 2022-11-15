@@ -1,3 +1,4 @@
+import { InformationSummary } from "./InformationSummary";
 import styles from "./style.module.scss";
 
 export const MainVisual: React.FC = () => {
@@ -6,8 +7,7 @@ export const MainVisual: React.FC = () => {
       <h1 className={styles["iyu-logo"]}>
         <img src="/assets/images/iyu-logo-RGB.svg" alt="iyu-logo" />
       </h1>
-      {/* todo: */}
-      {/* <information-summary :live-details="liveDetails" /> */}
+      <InformationSummary />
       {/* todo: PCのときだけ動画をロードできているか確認。なぜかローカルだとNetworkタブに出てこない */}
       {/* できていなければ OnlyClient 的なコンポーネントを実装する or 使う */}
       {typeof window !== undefined && (
