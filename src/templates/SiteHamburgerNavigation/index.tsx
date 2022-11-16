@@ -1,12 +1,10 @@
 import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
 import { CommonNavigation } from "@/components/CommonNavigation";
-import { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 
 export const SiteHamburgerNavigation: React.FC = () => {
   const hooks = useHooks();
-  const ref = useRef(null);
   return (
     <nav
       // v-scroll="scrollHandler"
@@ -39,7 +37,7 @@ export const SiteHamburgerNavigation: React.FC = () => {
       </button>
       <CSSTransition
         in={hooks.isOpen}
-        nodeRef={ref}
+        nodeRef={hooks.ref}
         timeout={0}
         classNames={{
           enter: styles["enter"],
@@ -53,7 +51,7 @@ export const SiteHamburgerNavigation: React.FC = () => {
         // onExiting={() => console.log("onExiting...")}
         // onExited={() => console.log("onExited!")}
       >
-        <CommonNavigation ref={ref} />
+        <CommonNavigation ref={hooks.ref} />
       </CSSTransition>
     </nav>
   );
