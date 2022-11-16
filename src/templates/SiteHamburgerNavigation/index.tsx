@@ -28,7 +28,7 @@ export const SiteHamburgerNavigation: React.FC = () => {
       </p>
       <button
         className={`${styles["burger-button"]} ${
-          hooks.isOpen && styles["is-open-menu"]
+          hooks.isOpen ? styles["is-open-menu"] : ""
         }`}
         aria-label={hooks.buttonLabel}
         onClick={hooks.onClickHamburgerButton}
@@ -40,14 +40,15 @@ export const SiteHamburgerNavigation: React.FC = () => {
       <CSSTransition
         in={hooks.isOpen}
         nodeRef={hooks.ref}
-        timeout={0}
+        timeout={200}
         classNames={{
           enter: styles["enter"],
-          enterDone: styles["enter-active"],
+          enterActive: styles["enter-active"],
           exit: styles["exit"],
-          exitDone: styles["exit-active"],
+          exitActive: styles["exit-active"],
         }}
         mountOnEnter
+        unmountOnExit
         // onEntering={() => console.log("onEntering...")}
         // onEnter={() => console.log("onEnter!")}
         // onExiting={() => console.log("onExiting...")}
