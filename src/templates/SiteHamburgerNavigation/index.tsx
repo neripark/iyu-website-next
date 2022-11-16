@@ -40,7 +40,7 @@ export const SiteHamburgerNavigation: React.FC = () => {
       <CSSTransition
         in={hooks.isOpen}
         nodeRef={hooks.ref}
-        timeout={200}
+        timeout={200} // css側と合わせる
         classNames={{
           enter: styles["enter"],
           enterActive: styles["enter-active"],
