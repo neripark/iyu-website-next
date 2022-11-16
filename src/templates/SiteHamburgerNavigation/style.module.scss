@@ -87,7 +87,6 @@
 // transition
 .enter {
   opacity: 0;
-  transition: opacity 200ms;
 }
 .enter-active {
   opacity: 1;
@@ -95,21 +94,8 @@
 }
 .exit {
   opacity: 1;
-  transition: opacity 200ms;
 }
 .exit-active {
   opacity: 0;
   transition: opacity 200ms;
 }
-
-// transition@vue
-// .v-enter,
-// .v-leave-to {
-//   transition: 0.2s;
-//   opacity: 0;
-// }
-// .v-enter-to,
-// .v-leave {
-//   transition: 0.2s;
-//   opacity: 1;
-// }

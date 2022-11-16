@@ -47,14 +47,12 @@ export const SiteHamburgerNavigation: React.FC = () => {
           exit: styles["exit"],
           exitDone: styles["exit-active"],
         }}
-        // unmountOnExit
-        onEntering={() => console.log("onEntering...")}
-        onEnter={() => console.log("onEnter!")}
-        onExiting={() => console.log("onExiting...")}
-        onExited={() => console.log("onExited!")}
+        mountOnEnter
+        // onEntering={() => console.log("onEntering...")}
+        // onEnter={() => console.log("onEnter!")}
+        // onExiting={() => console.log("onExiting...")}
+        // onExited={() => console.log("onExited!")}
       >
-        {/* todo: transition 消す */}
-        {/* todo: 初期状態は閉じているようにする */}
         <CommonNavigation ref={ref} />
       </CSSTransition>
     </nav>
