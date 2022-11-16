@@ -5,6 +5,7 @@ import { MainVisual } from "./MainVisual";
 import { MusicVideo } from "./MusicVideo";
 import { Profile } from "./Profile";
 import { SiteFloatingNavigation } from "./SiteFloatingNavigation";
+import { SiteHamburgerNavigation } from "./SiteHamburgerNavigation";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const Template: React.FC = () => {
@@ -12,6 +13,7 @@ export const Template: React.FC = () => {
     <main>
       <header>
         <SiteFloatingNavigation />
+        <SiteHamburgerNavigation />
       </header>
       <MainVisual />
       <Profile />
