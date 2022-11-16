@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import { RefObject, forwardRef, useRef } from "react";
+import { forwardRef } from "react";
 
 // note: react-transition-group の都合で ref を使うためにフォワーディング
 export const CommonNavigation = forwardRef<HTMLUListElement>((_props, ref) => {

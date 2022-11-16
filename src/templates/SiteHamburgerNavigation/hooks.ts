@@ -1,4 +1,3 @@
-import styles from "./style.module.scss";
 import { useState } from "react";
 
 export const useHooks = () => {
