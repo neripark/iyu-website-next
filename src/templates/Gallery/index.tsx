@@ -49,6 +49,8 @@ export const Gallery: React.FC = () => (
     </client-only> */}
     <div className={styles["pic"]}>
       {carouselImages.map((element) => (
+        // todo: カルーセルできていけそうなら next/image を使う
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           key={element.src}
           loading="lazy"

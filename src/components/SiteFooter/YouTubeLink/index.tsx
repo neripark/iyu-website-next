@@ -1,4 +1,5 @@
 import styles from "./style.module.scss";
+import Image from "next/image";
 
 export const YouTubeLink: React.FC = () => (
   <div className={styles["youtube"]}>
@@ -6,10 +7,12 @@ export const YouTubeLink: React.FC = () => (
       className={styles["link"]}
       href="https://www.youtube.com/channel/UCOhjr68zt5bWJo8cLKs2YAw"
     >
-      <img
+      <Image
         className={styles["icon"]}
         src="/assets/images/yt_icon_mono_dark.png"
         alt="iyu youtube channel"
+        width={34}
+        height={24}
       />
     </a>
   </div>

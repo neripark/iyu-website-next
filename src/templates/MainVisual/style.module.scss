@@ -24,7 +24,7 @@
   }
 }
 
-.iyu-logo {
+.heading {
   width: 495px;
   text-align: center;
   @include mq(tb) {
@@ -34,6 +34,11 @@
     width: 100%;
     padding: 30px 5%;
   }
+}
+
+.iyu-logo {
+  width: 100%;
+  height: auto;
 }
 
 .bg-movie {
