@@ -1,8 +1,10 @@
 import styles from "./style.module.scss";
+import { RefObject, forwardRef, useRef } from "react";
 
-export const CommonNavigation: React.FC = () => {
+// note: react-transition-group の都合で ref を使うためにフォワーディング
+export const CommonNavigation = forwardRef<HTMLUListElement>((_props, ref) => {
   return (
-    <ul className={styles["anchor-list"]}>
+    <ul className={styles["anchor-list"]} ref={ref}>
       <li className={styles["anchor-item"]}>
         <a
           // v-scroll-to="scrollTo(anchorList.profile)"
@@ -50,4 +52,4 @@ export const CommonNavigation: React.FC = () => {
       </li>
     </ul>
   );
-};
+});

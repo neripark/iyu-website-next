@@ -1,9 +1,12 @@
 import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
 import { CommonNavigation } from "@/components/CommonNavigation";
+import { useRef } from "react";
+import { CSSTransition } from "react-transition-group";
 
 export const SiteHamburgerNavigation: React.FC = () => {
   const hooks = useHooks();
+  const ref = useRef(null);
   return (
     <nav
       // v-scroll="scrollHandler"
@@ -34,7 +37,26 @@ export const SiteHamburgerNavigation: React.FC = () => {
         <span className={styles["line"]} />
         <span className={styles["line"]} />
       </button>
-      {hooks.isOpen && <CommonNavigation />}
+      <CSSTransition
+        in={hooks.isOpen}
+        nodeRef={ref}
+        timeout={0}
+        classNames={{
+          enter: styles["enter"],
+          enterDone: styles["enter-active"],
+          exit: styles["exit"],
+          exitDone: styles["exit-active"],
+        }}
+        // unmountOnExit
+        onEntering={() => console.log("onEntering...")}
+        onEnter={() => console.log("onEnter!")}
+        onExiting={() => console.log("onExiting...")}
+        onExited={() => console.log("onExited!")}
+      >
+        {/* todo: transition 消す */}
+        {/* todo: 初期状態は閉じているようにする */}
+        <CommonNavigation ref={ref} />
+      </CSSTransition>
     </nav>
   );
 };
