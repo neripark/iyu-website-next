@@ -1,4 +1,5 @@
 import styles from "./style.module.scss";
+import Image from "next/image";
 
 export const InstagramLink: React.FC = () => (
   <div className={styles["instagram"]}>
@@ -6,10 +7,12 @@ export const InstagramLink: React.FC = () => (
       className={styles["link"]}
       href="https://www.instagram.com/iyu_musictokyo/"
     >
-      <img
+      <Image
         className={styles["icon"]}
         src="/assets/images/instagram_icon.svg"
         alt="iyu instagram account"
+        width={30}
+        height={30}
       />
     </a>
   </div>
