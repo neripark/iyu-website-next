@@ -8,7 +8,7 @@ export const AppHead: React.FC = () => {
       <link rel="icon" href="/favicon.ico" />
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic"
+        href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=optional"
       />
       <link
         rel="stylesheet"
