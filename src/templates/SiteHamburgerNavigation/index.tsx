@@ -1,6 +1,7 @@
 import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
 import { CommonNavigation } from "@/components/CommonNavigation";
+import Image from "next/image";
 import { CSSTransition } from "react-transition-group";
 
 export const SiteHamburgerNavigation: React.FC = () => {
@@ -19,10 +20,12 @@ export const SiteHamburgerNavigation: React.FC = () => {
           className={styles["anchor"]}
           // :href="`#${anchorList.profile.id}`"
         >
-          <img
+          <Image
             className={styles["logo"]}
             src="/assets/images/iyu-logo-White.svg"
             alt="iyu-logo"
+            width={70}
+            height={39}
           />
         </a>
       </p>
