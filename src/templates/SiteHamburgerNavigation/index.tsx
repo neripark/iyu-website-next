@@ -8,7 +8,9 @@ export const SiteHamburgerNavigation: React.FC = () => {
   return (
     <nav
       // v-scroll="scrollHandler"
-      className={styles["site-ham-menu"]}
+      className={`${styles["site-ham-menu"]} ${
+        hooks.isScrollTop && styles["is-scroll-top"]
+      }`}
       // :class="{ 'is-scroll-top': isScrollTop }"
     >
       <p className={styles["wrap-img"]}>
