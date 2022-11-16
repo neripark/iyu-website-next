@@ -1,15 +1,17 @@
+import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
 import { CommonNavigation } from "@/components/CommonNavigation";
 
 export const SiteFloatingNavigation: React.FC = () => {
+  const hooks = useHooks();
   return (
     <nav
-      // v-scroll="scrollHandler"
-      className={styles["site-floating-nav"]}
-      // :class="{
-      //   'is-scroll-start': isNavScrollStart,
-      //   'is-window-top': isNavWindowTop
-      // }"
+      ref={hooks.ref}
+      className={`${styles["site-floating-nav"]} 
+      ${hooks.isScrollStart ? styles["is-scroll-start"] : ""} ${
+        hooks.isWindowTop ? styles["is-window-top"] : ""
+      }
+      `}
     >
       <CommonNavigation />
     </nav>
