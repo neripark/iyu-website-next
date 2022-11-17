@@ -1,6 +1,6 @@
 import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
-import { CommonNavigation } from "@/components/CommonNavigation";
+import { CommonNavigation } from "@/containers/CommonNavigation";
 import Image from "next/image";
 import { CSSTransition } from "react-transition-group";
 

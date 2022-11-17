@@ -3,6 +3,7 @@ import { Heading } from "@/components/Heading";
 import { Input } from "@/components/Input";
 import { Select } from "@/components/Select";
 import { Textarea } from "@/components/Textarea";
+import { anchorList } from "@/containers/CommonNavigation/anchorList";
 
 export const Contact: React.FC = () => {
   // todo: 実装する
@@ -11,7 +12,7 @@ export const Contact: React.FC = () => {
   const value = "1";
 
   return (
-    <section className={styles["contact"]}>
+    <section className={styles["contact"]} id={anchorList.contact.id}>
       <Heading color="yellow">Contact</Heading>
       <div className={styles["wrap"]}>
         <p className={styles["lead"]}>

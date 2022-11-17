@@ -1,11 +1,12 @@
 import { Description } from "./Description";
 import styles from "./style.module.scss";
 import { Heading } from "@/components/Heading";
+import { anchorList } from "@/containers/CommonNavigation/anchorList";
 import Image from "next/image";
 
 export const Profile: React.FC = () => {
   return (
-    <section className={styles["profile"]}>
+    <section className={styles["profile"]} id={anchorList.profile.id}>
       <Heading
         className={styles["heading"]}
         color="blue"

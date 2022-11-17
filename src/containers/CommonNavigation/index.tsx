@@ -1,3 +1,4 @@
+import { anchorList } from "./anchorList";
 import styles from "./style.module.scss";
 import { forwardRef } from "react";
 
@@ -11,16 +12,16 @@ export const CommonNavigation = forwardRef<HTMLUListElement>(
           <a
             // v-scroll-to="scrollTo(anchorList.profile)"
             className={styles["anchor"]}
-            // :href="`#${anchorList.profile.id}`"
+            href={`#${anchorList.profile.id}`}
           >
             <span className={styles["string"]}>Profile</span>
           </a>
         </li>
         <li className={styles["anchor-item"]}>
           <a
-            v-scroll-to="scrollTo(anchorList.music)"
+            // v-scroll-to="scrollTo(anchorList.music)"
             className={styles["anchor"]}
-            // :href="`#${anchorList.music.id}`"
+            href={`#${anchorList.musicVideo.id}`}
           >
             <span className={styles["string"]}>Music</span>
           </a>
@@ -29,7 +30,7 @@ export const CommonNavigation = forwardRef<HTMLUListElement>(
           <a
             // v-scroll-to="scrollTo(anchorList.live)"
             className={styles["anchor"]}
-            // :href="`#${anchorList.live.id}`"
+            href={`#${anchorList.live.id}`}
           >
             <span className={styles["string"]}>Live</span>
           </a>
@@ -38,7 +39,7 @@ export const CommonNavigation = forwardRef<HTMLUListElement>(
           <a
             // v-scroll-to="scrollTo(anchorList.gallery)"
             className={styles["anchor"]}
-            // :href="`#${anchorList.gallery.id}`"
+            href={`#${anchorList.gallery.id}`}
           >
             <span className={styles["string"]}>Gallery</span>
           </a>
@@ -47,7 +48,7 @@ export const CommonNavigation = forwardRef<HTMLUListElement>(
           <a
             v-scroll-to="scrollTo(anchorList.contact)"
             className={styles["anchor"]}
-            // :href="`#${anchorList.contact.id}`"
+            href={`#${anchorList.contact.id}`}
           >
             <span className={styles["string"]}>Contact</span>
           </a>

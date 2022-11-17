@@ -2,9 +2,10 @@ import { CardGroup } from "./CardGroup";
 import { InformationText } from "./InformationText";
 import styles from "./style.module.scss";
 import { Heading } from "@/components/Heading";
+import { anchorList } from "@/containers/CommonNavigation/anchorList";
 
 export const Live: React.FC = () => (
-  <section className={styles["live"]}>
+  <section className={styles["live"]} id={anchorList.live.id}>
     <Heading color="yellow">Live</Heading>
     <InformationText />
     <CardGroup />

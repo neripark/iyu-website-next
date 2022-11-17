@@ -1,10 +1,11 @@
 import { InformationSummary } from "./InformationSummary";
 import styles from "./style.module.scss";
+import { anchorList } from "@/containers/CommonNavigation/anchorList";
 import Image from "next/image";
 
 export const MainVisual: React.FC = () => {
   return (
-    <section className={styles["main-visual"]}>
+    <section className={styles["main-visual"]} id={anchorList.mainVisual.id}>
       <h1 className={styles["heading"]}>
         <Image
           src="/assets/images/iyu-logo-RGB.svg"

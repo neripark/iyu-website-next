@@ -1,5 +1,6 @@
 import styles from "./style.module.scss";
 import { Heading } from "@/components/Heading";
+import { anchorList } from "@/containers/CommonNavigation/anchorList";
 
 const carouselImages = [
   {
@@ -25,7 +26,7 @@ const carouselImages = [
 ];
 
 export const Gallery: React.FC = () => (
-  <section className={styles["gallery"]}>
+  <section className={styles["gallery"]} id={anchorList.gallery.id}>
     <Heading color="blue">Gallery</Heading>
     {/* todo: カルーセル選定する */}
     {/* <client-only>
