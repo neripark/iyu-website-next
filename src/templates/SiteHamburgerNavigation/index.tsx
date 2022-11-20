@@ -4,6 +4,7 @@ import { CommonNavigation } from "@/containers/CommonNavigation";
 import Image from "next/image";
 import { CSSTransition } from "react-transition-group";
 
+// todo: inprogress: 押したあと閉じる
 export const SiteHamburgerNavigation: React.FC = () => {
   const hooks = useHooks();
   return (
@@ -57,7 +58,7 @@ export const SiteHamburgerNavigation: React.FC = () => {
         // onExiting={() => console.log("onExiting...")}
         // onExited={() => console.log("onExited!")}
       >
-        <CommonNavigation ref={hooks.ref} />
+        <CommonNavigation ref={hooks.ref} onClickLink={hooks.close} />
       </CSSTransition>
     </nav>
   );

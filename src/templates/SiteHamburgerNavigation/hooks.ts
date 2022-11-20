@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 export const useHooks = () => {
   const ADJUST_POSITION = 500; // 適当
@@ -9,6 +9,9 @@ export const useHooks = () => {
   const buttonLabel = isOpen ? "メニューを閉じる" : "メニューを開く";
   const ref = useRef(null);
   const [isScrollTop, updateIsScrollTop] = useState(true);
+  const close = useCallback(() => {
+    setIsOpen(false);
+  }, []);
 
   useEffect(() => {
     if (typeof window === undefined) return;
@@ -23,6 +26,7 @@ export const useHooks = () => {
   }, []);
 
   return {
+    close,
     isOpen,
     isScrollTop,
     buttonLabel,
