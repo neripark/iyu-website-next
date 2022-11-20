@@ -1,5 +1,6 @@
 import styles from "./style.module.scss";
 import { Heading } from "@/components/Heading";
+import { anchorList } from "@/containers/CommonNavigation/anchorList";
 
 const videoList = [
   { id: "t3nlPjiIQ60" },
@@ -9,7 +10,7 @@ const videoList = [
 ];
 
 export const MusicVideo: React.FC = () => (
-  <section className={styles["music-video"]}>
+  <section className={styles["music-video"]} id={anchorList.musicVideo.id}>
     <Heading color="blue">Music</Heading>
     {videoList.map((element, index) => (
       <div key={index} className={styles["wrap-video"]}>
