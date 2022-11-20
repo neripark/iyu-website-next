@@ -4,22 +4,18 @@ import { CommonNavigation } from "@/containers/CommonNavigation";
 import Image from "next/image";
 import { CSSTransition } from "react-transition-group";
 
-// todo: inprogress: 押したあと閉じる
 export const SiteHamburgerNavigation: React.FC = () => {
   const hooks = useHooks();
   return (
     <nav
-      // v-scroll="scrollHandler"
       className={`${styles["site-ham-menu"]} ${
         hooks.isScrollTop && styles["is-scroll-top"]
       }`}
-      // :class="{ 'is-scroll-top': isScrollTop }"
     >
       <p className={styles["wrap-img"]}>
         <a
           v-scroll-to="scrollTo(anchorList.mainVisual)"
           className={styles["anchor"]}
-          // :href="`#${anchorList.profile.id}`"
         >
           <Image
             className={styles["logo"]}
