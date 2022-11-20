@@ -1,4 +1,4 @@
-type Section =
+export type SectionName =
   | "mainVisual"
   | "profile"
   | "musicVideo"
@@ -6,39 +6,49 @@ type Section =
   | "gallery"
   | "contact";
 
-export const anchorList: Record<
-  Section,
-  { id: string; offsetPc: number; offsetSp: number }
-> = {
+type SectionOffset = {
+  id: string;
+  label: string;
+  offsetPc: number;
+  offsetSp: number;
+};
+
+export const anchorList: Record<SectionName, SectionOffset> = {
   mainVisual: {
     id: "mainVisual",
-    offsetPc: -60,
-    offsetSp: -59,
+    label: "MainVisual", // 使わない
+    offsetPc: 60,
+    offsetSp: 59,
   },
   profile: {
     id: "profile",
-    offsetPc: -60,
-    offsetSp: -59,
+    label: "Profile",
+    offsetPc: 60,
+    offsetSp: 59,
   },
   musicVideo: {
     id: "musicVideo",
-    offsetPc: -60,
-    offsetSp: -59,
+    label: "Music",
+    offsetPc: 60,
+    offsetSp: 59,
   },
   live: {
     id: "live",
-    offsetPc: -60,
-    offsetSp: -59,
+    label: "Live",
+    offsetPc: 60,
+    offsetSp: 59,
   },
   gallery: {
     id: "gallery",
-    offsetPc: -60,
-    offsetSp: -59,
+    label: "Gallery",
+    offsetPc: 60,
+    offsetSp: 59,
   },
   contact: {
     id: "contact",
-    offsetPc: -60,
-    offsetSp: -59,
+    label: "Contact",
+    offsetPc: 60,
+    offsetSp: 59,
   },
 };
 

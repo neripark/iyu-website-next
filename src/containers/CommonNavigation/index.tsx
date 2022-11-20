@@ -1,58 +1,35 @@
 import { anchorList } from "./anchorList";
+import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
 import { forwardRef } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
+const Item: React.FC<{ id: string; offset: number; label: string }> = (
+  props
+) => {
+  return (
+    <li className={styles["anchor-item"]}>
+      <AnchorLink
+        className={styles["anchor"]}
+        href={`#${props.id}`}
+        offset={props.offset}
+      >
+        <span className={styles["string"]}>{props.label}</span>
+      </AnchorLink>
+    </li>
+  );
+};
 
 // note: react-transition-group の都合で ref を使うためにフォワーディング
 export const CommonNavigation = forwardRef<HTMLUListElement>(
   // note: displayName のために function で書いている
   function CommonNavigation(_props, ref) {
+    const hooks = useHooks();
     return (
       <ul className={styles["anchor-list"]} ref={ref}>
-        <li className={styles["anchor-item"]}>
-          <a
-            // v-scroll-to="scrollTo(anchorList.profile)"
-            className={styles["anchor"]}
-            href={`#${anchorList.profile.id}`}
-          >
-            <span className={styles["string"]}>Profile</span>
-          </a>
-        </li>
-        <li className={styles["anchor-item"]}>
-          <a
-            // v-scroll-to="scrollTo(anchorList.music)"
-            className={styles["anchor"]}
-            href={`#${anchorList.musicVideo.id}`}
-          >
-            <span className={styles["string"]}>Music</span>
-          </a>
-        </li>
-        <li className={styles["anchor-item"]}>
-          <a
-            // v-scroll-to="scrollTo(anchorList.live)"
-            className={styles["anchor"]}
-            href={`#${anchorList.live.id}`}
-          >
-            <span className={styles["string"]}>Live</span>
-          </a>
-        </li>
-        <li className={styles["anchor-item"]}>
-          <a
-            // v-scroll-to="scrollTo(anchorList.gallery)"
-            className={styles["anchor"]}
-            href={`#${anchorList.gallery.id}`}
-          >
-            <span className={styles["string"]}>Gallery</span>
-          </a>
-        </li>
-        <li className={styles["anchor-item"]}>
-          <a
-            v-scroll-to="scrollTo(anchorList.contact)"
-            className={styles["anchor"]}
-            href={`#${anchorList.contact.id}`}
-          >
-            <span className={styles["string"]}>Contact</span>
-          </a>
-        </li>
+        {hooks.offsetListAbsorbedDevice.map((element) => {
+          return <Item {...element} key={element.id} />;
+        })}
       </ul>
     );
   }
