@@ -4,12 +4,15 @@ import { Input } from "@/components/Input";
 import { Select } from "@/components/Select";
 import { Textarea } from "@/components/Textarea";
 import { anchorList } from "@/containers/CommonNavigation/anchorList";
+import { LiveInformationContext } from "@/providers/LiveInformationProvider";
+import { useContext } from "react";
 
 export const Contact: React.FC = () => {
+  const { lives } = useContext(LiveInformationContext);
   // todo: 実装する
   const isFormDisabled = false;
   const isSelectedTicketReserve = true;
-  const value = "1";
+  const maxTicketNumber = 5;
 
   return (
     <section className={styles["contact"]} id={anchorList.contact.id}>
@@ -52,41 +55,45 @@ export const Contact: React.FC = () => {
           </Select>
           {/* todo: 別コンポーネントに切り出す */}
           {isSelectedTicketReserve && (
-            <div
-              // v-show="isSelectedTicketReserve"
-              className={styles["show-only-live"]}
-            >
+            <div className={styles["show-only-live"]}>
               <Select
                 // v-model="formData.reservedate"
                 className={styles["is-small"]}
+                disabled={lives.length === 0 || !isSelectedTicketReserve}
                 name="reservedate"
               >
-                <option value="" disabled>
-                  - お取り置き日程 -
-                </option>
-                <option
-                // v-for="live in filteredLiveDetail"
-                // :key="live.date"
-                >
-                  {/* {`${$dayjs(live.date).format("YYYY/M/D (ddd)")} - ${live.title}`} */}
-                  YYYY/M/D (ddd) - ライブイベントaaa
-                </option>
+                <>
+                  <option value="" disabled>
+                    - お取り置き日程 -
+                  </option>
+                  {lives.map((element) => (
+                    <option key={element.date}>
+                      {/* todo: context 上でフォーマットする */}
+                      {/* {`${$dayjs(live.date).format("YYYY/M/D (ddd)")} - ${live.title}`} */}
+                      {element.date} {element.title}
+                    </option>
+                  ))}
+                </>
               </Select>
               <Select
                 // v-model="formData.reservecount"
                 className={styles["is-small"]}
+                disabled={lives.length === 0 || !isSelectedTicketReserve}
                 name="reservecount"
               >
-                <option value="" disabled>
-                  - お取り置き枚数 -
-                </option>
-                <option
-                  v-for="value in maxTicketNumber"
-                  // :key="value"
-                  // :value="`${value}枚`"
-                >
-                  {`${value}枚`}
-                </option>
+                <>
+                  <option value="" disabled>
+                    - お取り置き枚数 -
+                  </option>
+                  {[...Array(maxTicketNumber)].map((_, index) => {
+                    const value = index + 1;
+                    return (
+                      <option key={value} value={`${value}枚`}>
+                        {`${value}枚`}
+                      </option>
+                    );
+                  })}
+                </>
               </Select>
             </div>
           )}
