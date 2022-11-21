@@ -1,12 +1,16 @@
 import { LiveCard } from "./LiveCard";
-import { dummyLives } from "./dummyLives";
 import styles from "./style.module.scss";
+import { LiveInformationContext } from "@/providers/LiveInformationProvider";
+import { useContext } from "react";
 
-export const CardGroup: React.FC = () => (
-  // todo: contentful から取得するコードを書く
-  <ul className={styles["live-cards"]}>
-    {dummyLives.map((element, index) => (
-      <LiveCard key={index} {...element} />
-    ))}
-  </ul>
-);
+export const CardGroup: React.FC = () => {
+  const { lives } = useContext(LiveInformationContext);
+  if (lives.length === 0) return null;
+  return (
+    <ul className={styles["live-cards"]}>
+      {lives.map((element, index) => (
+        <LiveCard key={index} {...element} />
+      ))}
+    </ul>
+  );
+};

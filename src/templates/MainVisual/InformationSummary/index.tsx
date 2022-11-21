@@ -1,17 +1,17 @@
 import styles from "./style.module.scss";
-// todo: 共通化してモック化する
-import { dummyLives } from "src/templates/Live/CardGroup/dummyLives";
+import { LiveInformationContext } from "@/providers/LiveInformationProvider";
+import { useContext } from "react";
 
 export const InformationSummary: React.FC = () => {
-  const liveDetails = dummyLives;
+  const { lives } = useContext(LiveInformationContext);
 
   return (
     <div className={styles["information-summary"]}>
       <div className={styles["wrap"]}>
         <section className={styles["info-unit"]}>
           <h3 className={styles["head"]}>Live Schedule</h3>
-          {liveDetails.length > 0 ? (
-            liveDetails.map((element) => (
+          {lives.length > 0 ? (
+            lives.map((element) => (
               <p className={styles["lead"]} key={element.date}>
                 {/* {{ $dayjs(live.date).format('YYYY/M/D (ddd)') }}<br />{{ live.place }} */}
                 {/* todo: フォーマットする */}
