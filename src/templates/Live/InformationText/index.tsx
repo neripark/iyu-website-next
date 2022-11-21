@@ -1,10 +1,12 @@
 import styles from "./style.module.scss";
+import { LiveInformationContext } from "@/providers/LiveInformationProvider";
+import { useContext } from "react";
 
 export const InformationText: React.FC = () => {
-  const liveCount = 3; // todo: 実装する
+  const { lives } = useContext(LiveInformationContext);
   return (
     <div>
-      {liveCount > 0 ? (
+      {lives.length > 0 ? (
         <p className={styles["lead"]}>
           <span>チケットのお取置きは</span>
           <a
