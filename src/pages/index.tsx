@@ -19,6 +19,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const lives = livePosts.items.map((element) => element.fields);
 
   return {
-    props: { lives: lives ? lives : [] },
+    props: { lives },
   };
 };

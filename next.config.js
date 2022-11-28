@@ -9,6 +9,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "src/styles")],
   },
   images: {
+    // for resolve error: `Error: Image Optimization using Next.js' default loader is not compatible with `next export`.`
     unoptimized: true,
   },
   env: {

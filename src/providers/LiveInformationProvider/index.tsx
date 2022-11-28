@@ -39,9 +39,6 @@ interface Props {
   lives: Lives;
 }
 
-// todo: 増えてきたらファイルの単位を考える。
-// (選択肢1) このまま data fetch と provider を組にした関数をエンドポイントの数だけ増やす
-// (選択肢2) InitialDataProvider を作成し、data fetch と Provider を分ける
 export const LiveInformationProvider: React.FC<Props> = (props) => (
   <LiveInformationContext.Provider value={{ lives: props.lives }}>
     {props.children}
