@@ -8,6 +8,15 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "src/styles")],
   },
+  images: {
+    // for resolve error: `Error: Image Optimization using Next.js' default loader is not compatible with `next export`.`
+    unoptimized: true,
+  },
+  env: {
+    // src/types/node.d.ts で要定義
+    CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
+    CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
+  },
 };
 
 module.exports = nextConfig;
