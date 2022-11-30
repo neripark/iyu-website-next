@@ -13,10 +13,7 @@ export const SiteHamburgerNavigation: React.FC = () => {
       }`}
     >
       <p className={styles["wrap-img"]}>
-        <a
-          v-scroll-to="scrollTo(anchorList.mainVisual)"
-          className={styles["anchor"]}
-        >
+        <a className={styles["anchor"]}>
           <Image
             className={styles["logo"]}
             src="/assets/images/iyu-logo-White.svg"
