@@ -28,7 +28,7 @@ export const LiveCard: React.FC<Props> = (props) => (
         {props.timeStart ? props.timeStart : "未定"}
       </p>
       {props.timeIyu && (
-        <p v-if="props.timeIyu" className={styles["iyu-time"]}>
+        <p className={styles["iyu-time"]}>
           ※iyuの出演は{props.timeIyu}頃の予定です。
         </p>
       )}
