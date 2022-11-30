@@ -9,5 +9,7 @@ https://iyumusic.tokyo
 ## Build Setup
 
 ```
+cp .env.local.example .env.local # and edit env
 npm ci
+npm run dev
 ```
