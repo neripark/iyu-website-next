@@ -5,4 +5,4 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export const getEntries = <T>() => client.getEntries<T>();
+export const getEntries = <T>(query?: any) => client.getEntries<T>(query);
