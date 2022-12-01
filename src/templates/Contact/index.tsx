@@ -5,13 +5,15 @@ import { Textarea } from "@/components/Textarea";
 import { anchorList } from "@/containers/CommonNavigation/anchorList";
 import { LiveInformationContext } from "@/providers/LiveInformationProvider";
 import { useContext } from "react";
+import { CategoryOptionElements } from "./CategoryOptionElements";
+import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
 
 export const Contact: React.FC = () => {
+  const hooks = useHooks();
   const { lives } = useContext(LiveInformationContext);
   // todo: 実装する
   const isFormDisabled = false;
-  const isSelectedTicketReserve = true;
   const maxTicketNumber = 5;
 
   return (
@@ -23,6 +25,7 @@ export const Contact: React.FC = () => {
           <br />
           メッセージなど、お気軽にご連絡ください。
         </p>
+        <button onClick={hooks.debug}>debug</button>
         <form
           className={styles["contact-form"]}
           name="iyu-form"
@@ -38,6 +41,7 @@ export const Contact: React.FC = () => {
             name="name"
             type="text"
             placeholder="お名前"
+            onChange={hooks.onChange}
             required
           />
           <Select
@@ -48,22 +52,20 @@ export const Contact: React.FC = () => {
                 : styles["category-default"]
             }
             name="category"
+            // onChange={() => console.log("select changed!!")}
+            onChange={hooks.onChange}
+            defaultValue="default" // todo: option 側と共通化する
             required
           >
-            <option value="" disabled>
-              - お問い合わせ種類 -
-            </option>
-            <option value="live">ライブのチケットお取り置き</option>
-            <option value="together">共演のお誘い</option>
-            <option value="other">その他</option>
+            <CategoryOptionElements />
           </Select>
           {/* todo: 別コンポーネントに切り出す */}
-          {isSelectedTicketReserve && (
+          {hooks.isSelectedLiveReserve && (
             <div className={styles["show-only-live"]}>
               <Select
                 // v-model="formData.reservedate"
                 className={styles["is-small"]}
-                disabled={lives.length === 0 || !isSelectedTicketReserve}
+                disabled={lives.length === 0 || !hooks.isSelectedLiveReserve}
                 name="reservedate"
               >
                 <>
@@ -82,7 +84,8 @@ export const Contact: React.FC = () => {
               <Select
                 // v-model="formData.reservecount"
                 className={styles["is-small"]}
-                disabled={lives.length === 0 || !isSelectedTicketReserve}
+                disabled={lives.length === 0 || !hooks.isSelectedLiveReserve}
+                onChange={hooks.onChange}
                 name="reservecount"
               >
                 <>
@@ -106,12 +109,14 @@ export const Contact: React.FC = () => {
             name="email"
             type="email"
             placeholder="ご連絡先メールアドレス"
+            onChange={hooks.onChange}
             required
           />
           <Textarea
             // v-model="formData.message"
             name="message"
             placeholder="内容"
+            onChange={hooks.onChange}
             required
           />
           <button

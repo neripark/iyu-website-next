@@ -1,17 +1,7 @@
+import { ContactFormItem } from "@/types/ContactForm";
 import { Handler } from "@netlify/functions";
 
-type Params = {
-  name: string;
-  // todo: カテゴリぶんUnion Typesにする
-  category: string;
-  // todo: ライブ予約以外のときは存在しないよう型を改善する
-  reservedate: string;
-  reservecount: string;
-  email: string;
-  message: string;
-};
-
-const getMessage = (params: Params) => {
+const getMessage = (params: ContactFormItem) => {
   // todo: reservedateとreservecountがなかったら表示しない制御
   const msg = `
 webサイトからContactがありました！
