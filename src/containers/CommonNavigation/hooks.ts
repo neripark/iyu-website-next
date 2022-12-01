@@ -1,6 +1,6 @@
-import { anchorList } from "./anchorList";
 import { isSp } from "@/utils/isSp";
 import { useMemo } from "react";
+import { anchorList } from "./anchorList";
 
 export const useHooks = () => {
   const _isSp = useMemo(() => isSp(), []);

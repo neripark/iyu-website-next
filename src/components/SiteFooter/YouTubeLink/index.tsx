@@ -1,5 +1,5 @@
-import styles from "./style.module.scss";
 import Image from "next/image";
+import styles from "./style.module.scss";
 
 export const YouTubeLink: React.FC = () => (
   <div className={styles["youtube"]}>

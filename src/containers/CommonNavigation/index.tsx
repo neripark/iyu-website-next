@@ -1,7 +1,7 @@
-import { useHooks } from "./hooks";
-import styles from "./style.module.scss";
 import { forwardRef } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { useHooks } from "./hooks";
+import styles from "./style.module.scss";
 
 interface Props {
   onClickLink?: () => void;

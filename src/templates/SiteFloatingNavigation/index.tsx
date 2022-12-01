@@ -1,6 +1,6 @@
+import { CommonNavigation } from "@/containers/CommonNavigation";
 import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
-import { CommonNavigation } from "@/containers/CommonNavigation";
 
 export const SiteFloatingNavigation: React.FC = () => {
   const hooks = useHooks();

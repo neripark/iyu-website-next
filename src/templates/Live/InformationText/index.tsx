@@ -1,6 +1,6 @@
-import styles from "./style.module.scss";
 import { LiveInformationContext } from "@/providers/LiveInformationProvider";
 import { useContext } from "react";
+import styles from "./style.module.scss";
 
 export const InformationText: React.FC = () => {
   const { lives } = useContext(LiveInformationContext);

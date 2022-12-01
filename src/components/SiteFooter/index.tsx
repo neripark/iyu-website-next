@@ -1,7 +1,7 @@
 import { InstagramLink } from "./InstagramLink";
+import styles from "./style.module.scss";
 import { TwitterLink } from "./TwitterLink";
 import { YouTubeLink } from "./YouTubeLink";
-import styles from "./style.module.scss";
 
 export const SiteFooter: React.FC = () => (
   <footer className={styles["site-footer"]}>

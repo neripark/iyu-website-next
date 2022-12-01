@@ -1,7 +1,7 @@
-import { InformationSummary } from "./InformationSummary";
-import styles from "./style.module.scss";
 import { anchorList } from "@/containers/CommonNavigation/anchorList";
 import Image from "next/image";
+import { InformationSummary } from "./InformationSummary";
+import styles from "./style.module.scss";
 
 export const MainVisual: React.FC = () => {
   return (
