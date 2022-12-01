@@ -1,7 +1,7 @@
-import { LiveCard } from "./LiveCard";
-import styles from "./style.module.scss";
 import { LiveInformationContext } from "@/providers/LiveInformationProvider";
 import { useContext } from "react";
+import { LiveCard } from "./LiveCard";
+import styles from "./style.module.scss";
 
 export const CardGroup: React.FC = () => {
   const { lives } = useContext(LiveInformationContext);

@@ -1,8 +1,8 @@
-import { Description } from "./Description";
-import styles from "./style.module.scss";
 import { Heading } from "@/components/Heading";
 import { anchorList } from "@/containers/CommonNavigation/anchorList";
 import Image from "next/image";
+import { Description } from "./Description";
+import styles from "./style.module.scss";
 
 export const Profile: React.FC = () => {
   return (

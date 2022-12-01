@@ -1,4 +1,3 @@
-import styles from "./style.module.scss";
 import { Heading } from "@/components/Heading";
 import { Input } from "@/components/Input";
 import { Select } from "@/components/Select";
@@ -6,6 +5,7 @@ import { Textarea } from "@/components/Textarea";
 import { anchorList } from "@/containers/CommonNavigation/anchorList";
 import { LiveInformationContext } from "@/providers/LiveInformationProvider";
 import { useContext } from "react";
+import styles from "./style.module.scss";
 
 export const Contact: React.FC = () => {
   const { lives } = useContext(LiveInformationContext);

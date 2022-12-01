@@ -1,6 +1,6 @@
-import styles from "./style.module.scss";
 import { Heading } from "@/components/Heading";
 import { anchorList } from "@/containers/CommonNavigation/anchorList";
+import styles from "./style.module.scss";
 
 const videoList = [
   { id: "t3nlPjiIQ60" },
