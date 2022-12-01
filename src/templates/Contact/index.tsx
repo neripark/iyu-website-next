@@ -42,7 +42,11 @@ export const Contact: React.FC = () => {
           />
           <Select
             // v-model="formData.category"
-            className={styles["category"]}
+            className={
+              hooks.isSelectedSomeCategory
+                ? styles["category"]
+                : styles["category-default"]
+            }
             name="category"
             required
           >

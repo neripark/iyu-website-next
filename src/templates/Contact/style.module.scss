@@ -56,6 +56,12 @@
   }
 }
 
+// 選択されていないときにグレーにするため
+// todo: Select コンポーネント側に書く方法を考える
+.category-default {
+  color: $placeholder;
+}
+
 // todo: 各コンポーネントに冗長に書いて scoped にする
 // -- form parts basic style --
 // input,
