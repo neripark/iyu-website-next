@@ -1,10 +1,4 @@
-import { Category } from "@/types/ContactForm";
-
-const optionElementsData: Record<Category, string> = {
-  live: "ライブのチケットお取り置き",
-  together: "共演のお誘い",
-  other: "その他",
-};
+import { categories, type Category } from "@/types/ContactForm";
 
 export const CategoryOptionElements: React.FC = () => {
   return (
@@ -12,9 +6,9 @@ export const CategoryOptionElements: React.FC = () => {
       <option value="default" disabled style={{ display: "none" }}>
         - お問い合わせ種類 -
       </option>
-      {(Object.keys(optionElementsData) as Category[]).map((element) => (
+      {(Object.keys(categories) as Category[]).map((element) => (
         <option value={element} key={element}>
-          {optionElementsData[element]}
+          {categories[element]}
         </option>
       ))}
     </>

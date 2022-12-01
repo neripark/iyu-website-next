@@ -1,5 +1,16 @@
-import { ContactFormItem } from "@/types/ContactForm";
-import { Handler } from "@netlify/functions";
+import { categories, ContactFormItem } from "@/types/ContactForm";
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import type { NextApiRequest, NextApiResponse } from "next";
+
+interface NextApiRequestWithAppParams extends NextApiRequest {
+  body: ContactFormItem;
+}
+
+type Result = "ok" | "error";
+
+type LineResult = {
+  result: Result;
+};
 
 const getMessage = (params: ContactFormItem) => {
   // todo: reservedateとreservecountがなかったら表示しない制御
@@ -7,25 +18,27 @@ const getMessage = (params: ContactFormItem) => {
 webサイトからContactがありました！
 
 --
-[Name] ${params.name}
-[Category] ${params.category}
-[ReserveDate] ${params.reservedate}
-[ReserveCount] ${params.reservecount}
-[Email] ${params.email}
-[Message]
+[お名前] ${params.name}
+[お問い合わせカテゴリ] ${categories[params.category]}
+[お取り置き日程] ${params.reservedate}
+[お取り置き枚数] ${params.reservecount}
+[メールアドレス] ${params.email}
+[メッセージ]
 ${params.message}
   `;
 
   return msg;
 };
 
-export const handler: Handler = (event, context, callback) => {
-  // todo: 前回やったときは分岐があったため確認する
-  // const params = process.env.IYU_FORM_NOTIFY_TOKEN_TEST
-  //   ? querystring.parse(decodeURIComponent(event.body))
-  //   : JSON.parse(event.body).payload.data;
-  const message = getMessage(JSON.parse(event.body || "").payload.data);
-  fetch("https://notify-api.line.me/api/notify", {
+const handler = async (
+  req: NextApiRequestWithAppParams,
+  res: NextApiResponse<LineResult>
+) => {
+  console.log("req.body: ", req.body);
+
+  const message = getMessage(req.body);
+
+  const result: Result = await fetch("https://notify-api.line.me/api/notify", {
     method: "POST",
     headers: {
       // todo: Prodと出し分ける
@@ -37,22 +50,15 @@ export const handler: Handler = (event, context, callback) => {
     }).toString(),
   })
     .then((res) => {
-      const _res = {
-        ...res,
-        data: {
-          statusCode: 200,
-          body: "ok",
-        },
-      };
-      if (callback) {
-        callback(null, _res.data);
-      }
-      return _res;
+      console.log(`LINEへの通知が完了しました: ${res}`);
+      return "ok" as Result;
     })
     .catch((err) => {
-      if (callback) {
-        callback(err, { statusCode: 500, body: err });
-      }
-      console.error(`Contact Form Error: ${err}`);
+      console.error(`LINEへの通知でエラーが発生しました: ${err}`);
+      return "error";
     });
+
+  res.status(200).json({ result });
 };
+
+export default handler;

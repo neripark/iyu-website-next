@@ -13,7 +13,6 @@ export const Contact: React.FC = () => {
   const hooks = useHooks();
   const { lives } = useContext(LiveInformationContext);
   // todo: 実装する
-  const isFormDisabled = false;
   const maxTicketNumber = 5;
 
   return (
@@ -32,6 +31,7 @@ export const Contact: React.FC = () => {
           method="POST"
           netlify-honeypot="bot-field"
           data-netlify="true"
+          onSubmit={hooks.onSubmit}
           // @submit.prevent="handleSubmit"
         >
           {/* todo: hidden, 必要かどうか確認する */}
@@ -121,10 +121,10 @@ export const Contact: React.FC = () => {
           />
           <button
             className={styles["send-button"]}
-            // :disabled="isFormDisabled"
+            disabled={hooks.isFormDisabled}
             type="submit"
           >
-            {isFormDisabled ? "送信中..." : "送信する"}
+            {hooks.isFormDisabled ? "送信中..." : "送信する"}
           </button>
         </form>
       </div>
