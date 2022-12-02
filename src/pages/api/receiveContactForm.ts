@@ -13,19 +13,22 @@ type LineResult = {
 };
 
 const getMessage = (params: ContactFormItem) => {
-  // todo: reservedateとreservecountがなかったら表示しない制御
   const msg = `
 webサイトからContactがありました！
 
 --
 [お名前] ${params.name}
-[お問い合わせカテゴリ] ${categories[params.category]}
+[お問い合わせカテゴリ] ${categories[params.category]}${
+    params.category === "live"
+      ? `
 [お取り置き日程] ${params.reservedate}
-[お取り置き枚数] ${params.reservecount}
+[お取り置き枚数] ${params.reservecount}`
+      : ""
+  }
 [メールアドレス] ${params.email}
 [メッセージ]
 ${params.message}
-  `;
+`;
 
   return msg;
 };
