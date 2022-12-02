@@ -4,7 +4,6 @@ import {
   FormEvent,
   useCallback,
   useContext,
-  useMemo,
   useState,
 } from "react";
 import { UserInputContext } from "./UserInputProvider";
@@ -13,14 +12,7 @@ export const useHooks = () => {
   const { userInput, setUserInput } = useContext(UserInputContext);
   const [isFormDisabled, setIsFormDisabled] = useState(false);
 
-  const isSelectedLiveReserve = useMemo(() => {
-    return userInput.category === "live";
-  }, [userInput.category]);
-
-  const isSelectedSomeCategory = useMemo(() => {
-    return userInput.category !== undefined;
-  }, [userInput.category]);
-
+  // todo: Context 側に寄せる
   const onChange = useCallback(
     (
       e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -59,7 +51,5 @@ export const useHooks = () => {
     onChange,
     onSubmit,
     isFormDisabled,
-    isSelectedLiveReserve,
-    isSelectedSomeCategory,
   };
 };

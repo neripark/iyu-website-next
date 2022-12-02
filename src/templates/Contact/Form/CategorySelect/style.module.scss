@@ -1,0 +1,15 @@
+@import "variables";
+@import "functions";
+
+.wrapper {
+  text-align: right;
+  .is-small {
+    width: 95%;
+  }
+}
+
+// 選択されていないときにグレーにするため
+// todo: Select コンポーネント側に書く方法を考える
+.category-default {
+  color: $placeholder;
+}
