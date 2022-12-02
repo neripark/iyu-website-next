@@ -18,7 +18,7 @@ webサイトからContactがありました！
 
 --
 [お名前] ${params.name}
-[お問い合わせカテゴリ] ${categories[params.category]}${
+[お問い合わせ種類] ${categories[params.category]}${
     params.category === "live"
       ? `
 [お取り置き日程] ${params.reservedate}

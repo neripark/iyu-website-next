@@ -31,6 +31,7 @@ export const Contact: React.FC = () => {
           netlify-honeypot="bot-field"
           data-netlify="true"
           onSubmit={hooks.onSubmit}
+          // todo: netlify の form に認識されるか確認し、要不要を決める。preventDefault 書いてるからたぶんだめ？
           // @submit.prevent="handleSubmit"
         >
           {/* todo: hidden, 必要かどうか確認する */}
