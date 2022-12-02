@@ -12,4 +12,7 @@
   outline-color: $yellow-rgba;
   resize: vertical;
   height: 10em;
+  &::placeholder {
+    color: $placeholder;
+  }
 }
