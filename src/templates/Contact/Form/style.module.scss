@@ -1,0 +1,37 @@
+@import "variables";
+@import "functions";
+
+.contact-form {
+  margin-top: 10px;
+}
+
+.show-only-live {
+  text-align: right;
+  .is-small {
+    width: 95%;
+  }
+}
+
+.send-button {
+  background: $orange;
+  color: $white;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  margin-top: 10px;
+  font-size: 16px;
+  padding: 0.5em 0.7em;
+  outline-color: $yellow-rgba;
+  user-select: none;
+  &[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+// 選択されていないときにグレーにするため
+// todo: Select コンポーネント側に書く方法を考える
+.category-default {
+  color: $placeholder;
+}
