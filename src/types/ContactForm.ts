@@ -27,19 +27,3 @@ interface UnSelectedLive extends Basic {
 export type ContactFormItem = SelectedLive | UnSelectedLive;
 
 export type SubmitItem = ContactFormItem & { "form-name": string };
-
-// const hoge1: ContactFormItem = {
-//   name: "aaa",
-//   email: "aaa",
-//   message: "aaa",
-//   category: "together",
-// }
-
-// const hoge2: ContactFormItem = {
-//   name: "aaa",
-//   email: "aaa",
-//   message: "aaa",
-//   category: "live",
-//   reservedate: "",
-//   reservecount: "",
-// }

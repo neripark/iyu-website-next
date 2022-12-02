@@ -1,8 +1,16 @@
 import { ContactFormItem, SubmitItem } from "@/types/ContactForm";
-import React, { FormEvent, useCallback, useMemo, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from "react";
+import { UserInputContext } from "./UserInputProvider";
 
 export const useHooks = () => {
-  const [userInput, setUserInput] = useState<Partial<ContactFormItem>>({});
+  const { userInput, setUserInput } = useContext(UserInputContext);
   const [isFormDisabled, setIsFormDisabled] = useState(false);
 
   const isSelectedLiveReserve = useMemo(() => {
@@ -15,9 +23,7 @@ export const useHooks = () => {
 
   const onChange = useCallback(
     (
-      e: React.ChangeEvent<
-        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-      >
+      e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
       setUserInput((prev) => {
         return {
@@ -26,7 +32,7 @@ export const useHooks = () => {
         };
       });
     },
-    []
+    [setUserInput]
   );
 
   const onSubmit = (e: FormEvent) => {
