@@ -17,7 +17,7 @@ export const Form: React.FC = () => (
 const FormParts: React.FC = () => {
   const hooks = useHooks();
   const { lives } = useContext(LiveInformationContext);
-  const maxTicketNumber = 5;
+  const MAX_TICKET_NUMBER = 5;
 
   return (
     <>
@@ -81,7 +81,7 @@ const FormParts: React.FC = () => {
                 <option value="" disabled>
                   - お取り置き枚数 -
                 </option>
-                {[...Array(maxTicketNumber)].map((_, index) => {
+                {[...Array(MAX_TICKET_NUMBER)].map((_, index) => {
                   const value = index + 1;
                   return (
                     <option key={value} value={`${value}枚`}>
