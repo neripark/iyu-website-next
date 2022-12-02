@@ -24,7 +24,6 @@ export const Contact: React.FC = () => {
           <br />
           メッセージなど、お気軽にご連絡ください。
         </p>
-        <button onClick={hooks.debug}>debug</button>
         <form
           className={styles["contact-form"]}
           name="iyu-form"

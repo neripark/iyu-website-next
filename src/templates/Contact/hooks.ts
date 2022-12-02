@@ -57,19 +57,12 @@ export const useHooks = () => {
       });
   };
 
-  //
-  const debug = () => {
-    console.log(userInput);
-  };
-  //
-
   return {
     onChange,
     onSubmit,
     isFormDisabled,
     isSelectedLiveReserve,
     isSelectedSomeCategory,
-    debug, //
   };
 };
 
