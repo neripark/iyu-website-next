@@ -44,8 +44,7 @@ const handler = async (
   const result: Result = await fetch("https://notify-api.line.me/api/notify", {
     method: "POST",
     headers: {
-      // todo: Prodと出し分ける
-      Authorization: `Bearer ${process.env.LINE_TOKEN_TEST}`,
+      Authorization: `Bearer ${process.env.LINE_NOTIFY_TOKEN}`,
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body: new URLSearchParams({
