@@ -7,11 +7,7 @@ import styles from "./style.module.scss";
 export const Profile: React.FC = () => {
   return (
     <section className={styles["profile"]} id={anchorList.profile.id}>
-      <Heading
-        className={styles["heading"]}
-        color="blue"
-        data-testid="hogehoge"
-      >
+      <Heading className={styles["heading"]} color="blue">
         Profile
       </Heading>
       <div className={styles["wrap-photo"]}>
