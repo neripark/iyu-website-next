@@ -14,8 +14,20 @@ export const useHooks = () => {
     return userInput.category !== undefined;
   }, [userInput.category]);
 
+  // todo: Context 側に寄せる
+  const isSelectedSomeReserveDate = useMemo(() => {
+    return userInput.reservedate !== undefined;
+  }, [userInput.reservedate]);
+
+  // todo: Context 側に寄せる
+  const isSelectedSomeReserveCount = useMemo(() => {
+    return userInput.reservecount !== undefined;
+  }, [userInput.reservecount]);
+
   return {
     isSelectedLiveReserve,
     isSelectedSomeCategory,
+    isSelectedSomeReserveDate,
+    isSelectedSomeReserveCount,
   };
 };
