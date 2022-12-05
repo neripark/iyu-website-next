@@ -33,6 +33,7 @@ export const CategorySelect: React.FC<Props> = (props) => {
         <div className={styles["wrapper"]}>
           <Select
             className={styles["is-small"]}
+            onChange={props.onChange}
             disabled={lives.length === 0 || !hooks.isSelectedLiveReserve}
             name="reservedate"
           >
