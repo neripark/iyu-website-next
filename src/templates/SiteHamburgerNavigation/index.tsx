@@ -15,19 +15,19 @@ export const SiteHamburgerNavigation: React.FC = () => {
       <p className={styles["wrap-img"]}>
         <a className={styles["anchor"]}>
           <Image
-            className={styles["logo"]}
-            src="/assets/images/iyu-logo-White.svg"
             alt="iyu-logo"
-            width={70}
+            className={styles["logo"]}
             height={39}
+            src="/assets/images/iyu-logo-White.svg"
+            width={70}
           />
         </a>
       </p>
       <button
+        aria-label={hooks.buttonLabel}
         className={`${styles["burger-button"]} ${
           hooks.isOpen ? styles["is-open-menu"] : ""
         }`}
-        aria-label={hooks.buttonLabel}
         onClick={hooks.onClickHamburgerButton}
       >
         <span className={styles["line"]} />
@@ -35,23 +35,23 @@ export const SiteHamburgerNavigation: React.FC = () => {
         <span className={styles["line"]} />
       </button>
       <CSSTransition
-        in={hooks.isOpen}
-        nodeRef={hooks.ref}
-        timeout={200} // css側と合わせる
         classNames={{
           enter: styles["enter"],
           enterActive: styles["enter-active"],
           exit: styles["exit"],
           exitActive: styles["exit-active"],
         }}
+        in={hooks.isOpen}
         mountOnEnter
+        nodeRef={hooks.ref}
+        timeout={200} // css側と合わせる
         unmountOnExit
         // onEntering={() => console.log("onEntering...")}
         // onEnter={() => console.log("onEnter!")}
         // onExiting={() => console.log("onExiting...")}
         // onExited={() => console.log("onExited!")}
       >
-        <CommonNavigation ref={hooks.ref} onClickLink={hooks.close} />
+        <CommonNavigation onClickLink={hooks.close} ref={hooks.ref} />
       </CSSTransition>
     </nav>
   );

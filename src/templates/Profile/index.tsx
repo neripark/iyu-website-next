@@ -12,11 +12,11 @@ export const Profile: React.FC = () => {
       </Heading>
       <div className={styles["wrap-photo"]}>
         <Image
+          alt="profile photo"
           className={styles["profile-photo"]}
+          height={1370}
           src="/assets/images/profile.jpg"
           width={1920}
-          height={1370}
-          alt="profile photo"
         />
       </div>
       <Description />

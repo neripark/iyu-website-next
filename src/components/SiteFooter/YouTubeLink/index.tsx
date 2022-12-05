@@ -8,11 +8,11 @@ export const YouTubeLink: React.FC = () => (
       href="https://www.youtube.com/channel/UCOhjr68zt5bWJo8cLKs2YAw"
     >
       <Image
-        className={styles["icon"]}
-        src="/assets/images/yt_icon_mono_dark.png"
         alt="iyu youtube channel"
-        width={34}
+        className={styles["icon"]}
         height={24}
+        src="/assets/images/yt_icon_mono_dark.png"
+        width={34}
       />
     </a>
   </div>

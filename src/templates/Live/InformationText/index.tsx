@@ -22,8 +22,8 @@ export const InformationText: React.FC = () => {
           <a
             className={styles["text-link"]}
             href="https://twitter.com/iyu_band"
-            target="_blank"
             rel="noreferrer"
+            target="_blank"
           >
             Twitter
           </a>
@@ -38,8 +38,8 @@ export const InformationText: React.FC = () => {
           <a
             className={styles["text-link"]}
             href="https://twitter.com/iyu_band"
-            target="_blank"
             rel="noreferrer"
+            target="_blank"
           >
             Twitter
           </a>

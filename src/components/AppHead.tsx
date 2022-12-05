@@ -5,25 +5,25 @@ export const AppHead: React.FC = () => {
     <Head>
       <title>iyu</title>
       <meta
-        name="description"
         content="都内で活動中の新宿系お散歩ポップバンド、iyuの公式Webサイトです。バンドに関するすべての情報を掲載しています。"
+        name="description"
       />
       <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <meta property="og:url" content="https://iyumusic.tokyo" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="iyu" />
-      <meta property="og:site_name" content="iyu" />
+      <meta content="width=device-width,initial-scale=1" name="viewport" />
+      <meta content="https://iyumusic.tokyo" property="og:url" />
+      <meta content="website" property="og:type" />
+      <meta content="iyu" property="og:title" />
+      <meta content="iyu" property="og:site_name" />
       <meta
-        property="og:description"
         content="都内で活動中の新宿系お散歩ポップバンド、iyuの公式Webサイトです。バンドに関するすべての情報を掲載しています。"
+        property="og:description"
       />
-      <meta property="og:image" content="https://iyumusic.tokyo/og_image.png" />
-      <meta property="twitter:site" content="@iyu_band" />
-      <meta property="twitter:card" content="summary_large_image" />
+      <meta content="https://iyumusic.tokyo/og_image.png" property="og:image" />
+      <meta content="@iyu_band" property="twitter:site" />
+      <meta content="summary_large_image" property="twitter:card" />
       {/* images */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" href="/apple-touch-icon.jpg" />
+      <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+      <link href="/apple-touch-icon.jpg" rel="apple-touch-icon" />
     </Head>
   );
 };

@@ -8,11 +8,11 @@ export const InstagramLink: React.FC = () => (
       href="https://www.instagram.com/iyu_musictokyo/"
     >
       <Image
-        className={styles["icon"]}
-        src="/assets/images/instagram_icon.svg"
         alt="iyu instagram account"
-        width={30}
+        className={styles["icon"]}
         height={30}
+        src="/assets/images/instagram_icon.svg"
+        width={30}
       />
     </a>
   </div>
