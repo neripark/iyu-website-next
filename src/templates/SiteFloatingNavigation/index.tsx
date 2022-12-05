@@ -6,12 +6,12 @@ export const SiteFloatingNavigation: React.FC = () => {
   const hooks = useHooks();
   return (
     <nav
-      ref={hooks.ref}
       className={`${styles["site-floating-nav"]} 
       ${hooks.isScrollStart ? styles["is-scroll-start"] : ""} ${
         hooks.isWindowTop ? styles["is-window-top"] : ""
       }
       `}
+      ref={hooks.ref}
     >
       <CommonNavigation />
     </nav>

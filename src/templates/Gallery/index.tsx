@@ -53,11 +53,11 @@ export const Gallery: React.FC = () => (
         // todo: カルーセルできていけそうなら next/image を使う
         // eslint-disable-next-line @next/next/no-img-element
         <img
+          alt={element.alt}
+          className={styles["image"]}
           key={element.src}
           loading="lazy"
-          className={styles["image"]}
           src={element.src}
-          alt={element.alt}
         />
       ))}
     </div>

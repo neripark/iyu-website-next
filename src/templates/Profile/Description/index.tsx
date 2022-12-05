@@ -41,7 +41,7 @@ export const Description: React.FC = () => {
     <div className={styles["profile-description"]}>
       <ul className={styles["member-list"]}>
         {memberList.map((element, index) => (
-          <Member name={element.name} part={element.part} key={index} />
+          <Member key={index} name={element.name} part={element.part} />
         ))}
       </ul>
       <p className={styles["description"]}>

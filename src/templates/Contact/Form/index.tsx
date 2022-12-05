@@ -17,37 +17,36 @@ const FormParts: React.FC = () => {
   return (
     <form
       className={styles["contact-form"]}
-      name="iyu-form"
-      method="POST"
-      // todo: netlify の form に認識されるか確認し、要不要を決める。preventDefault 書いてるからたぶんだめ？
-      netlify-honeypot="bot-field"
       data-netlify="true"
+      method="POST"
+      name="iyu-form"
+      netlify-honeypot="bot-field" // todo: netlify の form に認識されるか確認し、要不要を決める。preventDefault 書いてるからたぶんだめ？
       onSubmit={hooks.onSubmit}
     >
       <Input
         name="name"
-        type="text"
-        placeholder="お名前"
         onChange={hooks.onChange}
+        placeholder="お名前"
         required
+        type="text"
       />
       <CategorySelect onChange={hooks.onChange} />
       <Input
         name="email"
-        type="email"
-        placeholder="ご連絡先メールアドレス"
         onChange={hooks.onChange}
+        placeholder="ご連絡先メールアドレス"
         required
+        type="email"
       />
       <Textarea
         name="message"
-        placeholder="内容"
         onChange={hooks.onChange}
+        placeholder="内容"
         required
       />
       <SubmitButton
-        disabled={hooks.isFormDisabled}
         className={styles["send-button"]}
+        disabled={hooks.isFormDisabled}
       />
     </form>
   );

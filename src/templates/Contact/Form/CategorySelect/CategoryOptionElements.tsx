@@ -9,7 +9,7 @@ export const CategoryOptionElements: React.FC<Props> = (props) => {
     <>
       <option value={props.defaultValue}>- お問い合わせ種類 -</option>
       {(Object.keys(categories) as Category[]).map((element) => (
-        <option value={element} key={element}>
+        <option key={element} value={element}>
           {categories[element]}
         </option>
       ))}

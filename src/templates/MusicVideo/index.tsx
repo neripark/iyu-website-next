@@ -13,13 +13,13 @@ export const MusicVideo: React.FC = () => (
   <section className={styles["music-video"]} id={anchorList.musicVideo.id}>
     <Heading color="blue">Music</Heading>
     {videoList.map((element, index) => (
-      <div key={index} className={styles["wrap-video"]}>
+      <div className={styles["wrap-video"]} key={index}>
         <div className={styles["inner"]}>
           <iframe
-            className={styles["yt-embed"]}
-            src={`https://www.youtube.com/embed/${element.id}`}
-            frameBorder="0"
             allowFullScreen
+            className={styles["yt-embed"]}
+            frameBorder="0"
+            src={`https://www.youtube.com/embed/${element.id}`}
           />
         </div>
       </div>

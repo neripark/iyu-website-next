@@ -6,12 +6,12 @@ export default function Document() {
       <Head>
         {/* note: https://nextjs.org/docs/messages/no-page-custom-font の対策のためここに書いている */}
         <link
-          rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=optional"
+          rel="stylesheet"
         />
         <link
-          rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Heebo:700&display=swap"
+          rel="stylesheet"
         />
       </Head>
       <body>

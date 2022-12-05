@@ -20,9 +20,9 @@ export const CategorySelect: React.FC<Props> = (props) => {
     <>
       <Select
         className={hooks.isSelectedSomeCategory ? "" : styles["select-default"]}
+        defaultValue={DEFAULT_VALUE}
         name="category"
         onChange={props.onChange}
-        defaultValue={DEFAULT_VALUE}
         required
       >
         <CategoryOptionElements defaultValue={DEFAULT_VALUE} />
@@ -33,11 +33,11 @@ export const CategorySelect: React.FC<Props> = (props) => {
             className={`${styles["is-small"]} ${
               hooks.isSelectedSomeReserveDate ? "" : styles["select-default"]
             }`}
-            onChange={props.onChange}
-            disabled={lives.length === 0 || !hooks.isSelectedLiveReserve}
             defaultValue={DEFAULT_VALUE}
-            required
+            disabled={lives.length === 0 || !hooks.isSelectedLiveReserve}
             name="reservedate"
+            onChange={props.onChange}
+            required
           >
             <ReserveDateOptionElements defaultValue={DEFAULT_VALUE} />
           </Select>
@@ -45,11 +45,11 @@ export const CategorySelect: React.FC<Props> = (props) => {
             className={`${styles["is-small"]} ${
               hooks.isSelectedSomeReserveCount ? "" : styles["select-default"]
             }`}
-            disabled={lives.length === 0 || !hooks.isSelectedLiveReserve}
-            onChange={props.onChange}
             defaultValue={DEFAULT_VALUE}
-            required
+            disabled={lives.length === 0 || !hooks.isSelectedLiveReserve}
             name="reservecount"
+            onChange={props.onChange}
+            required
           >
             <ReserveCountOptionElements defaultValue={DEFAULT_VALUE} />
           </Select>
