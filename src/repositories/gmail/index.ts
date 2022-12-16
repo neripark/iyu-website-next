@@ -17,7 +17,9 @@ export const sendMailByGmail = async (props: Props) => {
   });
   await transporter.sendMail({
     from: {
-      name: process.env.MAIL_FROM_NAME || "",
+      name: `${
+        process.env.NODE_ENV !== "production" ? "[test] " : ""
+      }iyu Webサイト`,
       address: process.env.MAIL_USER || "",
     },
     to: process.env.MAIL_TO,
