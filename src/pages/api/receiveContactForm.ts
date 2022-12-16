@@ -9,7 +9,7 @@ interface NextApiRequestWithAppParams extends NextApiRequest {
 
 type Result = "ok" | "error";
 
-type LineResult = {
+type AppApiResponse = {
   result: Result;
 };
 
@@ -34,7 +34,7 @@ ${params.message}
   return msg;
 };
 
-const notifyToLine = (message: string) => {
+const notifyToLine = async (message: string) => {
   return fetch("https://notify-api.line.me/api/notify", {
     method: "POST",
     headers: {
@@ -53,7 +53,7 @@ const notifyToLine = (message: string) => {
     });
 };
 
-const sendMail = (userName: string, body: string) => {
+const sendMail = async (userName: string, body: string) => {
   return sendMailByGmail({
     title: `iyu webサイトから問い合わせ: ${userName} 様より`,
     body,
@@ -68,7 +68,7 @@ const sendMail = (userName: string, body: string) => {
 
 const handler = async (
   req: NextApiRequestWithAppParams,
-  res: NextApiResponse<LineResult>
+  res: NextApiResponse<AppApiResponse>
 ) => {
   console.log("req.body: ", req.body);
 
