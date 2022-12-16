@@ -1,3 +1,4 @@
+import { sendMailByGmail } from "@/repositories/gmail";
 import { categories, ContactFormItem } from "@/types/ContactForm";
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
@@ -8,7 +9,7 @@ interface NextApiRequestWithAppParams extends NextApiRequest {
 
 type Result = "ok" | "error";
 
-type LineResult = {
+type AppApiResponse = {
   result: Result;
 };
 
@@ -33,15 +34,8 @@ ${params.message}
   return msg;
 };
 
-const handler = async (
-  req: NextApiRequestWithAppParams,
-  res: NextApiResponse<LineResult>
-) => {
-  console.log("req.body: ", req.body);
-
-  const message = getMessage(req.body);
-
-  const result: Result = await fetch("https://notify-api.line.me/api/notify", {
+const notifyToLine = async (message: string) => {
+  return fetch("https://notify-api.line.me/api/notify", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${process.env.LINE_NOTIFY_TOKEN}`,
@@ -53,10 +47,41 @@ const handler = async (
   })
     .then((res) => {
       console.log(`LINEへの通知が完了しました: ${res}`);
-      return "ok" as Result;
     })
     .catch((err) => {
       console.error(`LINEへの通知でエラーが発生しました: ${err}`);
+    });
+};
+
+const sendMail = async (userName: string, body: string) => {
+  return sendMailByGmail({
+    title: `お問い合わせが届きました！: ${userName} 様より`,
+    body,
+  })
+    .then(() => {
+      console.log(`Gmailへの送信が完了しました。`);
+    })
+    .catch((err) => {
+      console.error(`Gmailへの送信でエラーが発生しました: ${err}`);
+    });
+};
+
+const handler = async (
+  req: NextApiRequestWithAppParams,
+  res: NextApiResponse<AppApiResponse>
+) => {
+  console.log("req.body: ", req.body);
+
+  const message = getMessage(req.body);
+
+  const result: Result = await Promise.all([
+    notifyToLine(message),
+    sendMail(req.body.name, message),
+  ])
+    .then(() => {
+      return "ok" as Result;
+    })
+    .catch(() => {
       return "error";
     });
 
