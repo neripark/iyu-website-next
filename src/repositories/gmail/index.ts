@@ -5,7 +5,7 @@ interface Props {
   body: string;
 }
 
-export const sendMailToGmail = async (props: Props) => {
+export const sendMailByGmail = async (props: Props) => {
   const transporter = createTransport({
     service: "gmail",
     port: 465,

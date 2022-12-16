@@ -1,4 +1,4 @@
-import { sendMailToGmail } from "@/repositories/gmail";
+import { sendMailByGmail } from "@/repositories/gmail";
 import { categories, ContactFormItem } from "@/types/ContactForm";
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
@@ -54,12 +54,12 @@ const notifyToLine = (message: string) => {
 };
 
 const sendMail = (userName: string, body: string) => {
-  return sendMailToGmail({
+  return sendMailByGmail({
     title: `iyu webサイトから問い合わせ: ${userName} 様より`,
     body,
   })
-    .then((res) => {
-      console.log(`Gmailへの送信が完了しました: ${res}`);
+    .then(() => {
+      console.log(`Gmailへの送信が完了しました。`);
     })
     .catch((err) => {
       console.error(`Gmailへの送信でエラーが発生しました: ${err}`);
