@@ -55,7 +55,7 @@ const notifyToLine = async (message: string) => {
 
 const sendMail = async (userName: string, body: string) => {
   return sendMailByGmail({
-    title: `iyu webサイトから問い合わせ: ${userName} 様より`,
+    title: `お問い合わせが届きました！: ${userName} 様より`,
     body,
   })
     .then(() => {

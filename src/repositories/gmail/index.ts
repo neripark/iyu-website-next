@@ -16,7 +16,10 @@ export const sendMailByGmail = async (props: Props) => {
     },
   });
   await transporter.sendMail({
-    from: process.env.MAIL_FROM,
+    from: {
+      name: process.env.MAIL_FROM_NAME || "",
+      address: process.env.MAIL_USER || "",
+    },
     to: process.env.MAIL_TO,
     subject: props.title,
     text: props.body,
