@@ -10,6 +10,7 @@ interface Props {
 export const Carousel: React.FC<Props> = (props) => (
   <Splide
     aria-label="私のお気に入りの画像集"
+    className={props.className}
     hasTrack={false}
     options={{
       classes: {
@@ -35,7 +36,6 @@ export const Carousel: React.FC<Props> = (props) => (
       // note: デフォルトでは方向はmaxだが、minに変更できる。CSS側で統一できたらこちらも統一する
       // mediaQuery: "min"
     }}
-    className={props.className}
   >
     <SplideTrack>
       {images.map((element) => (
@@ -56,18 +56,18 @@ export const Carousel: React.FC<Props> = (props) => (
         className={`splide__arrow ${styles["custom__arrow"]} splide__arrow--prev ${styles["custom__arrow--prev"]}`}
       >
         <img
+          alt="to Previous Slide"
           className={styles["arrow-image"]}
           src="/assets/images/gallery-button-L.png"
-          alt="to Previous Slide"
         />
       </button>
       <button
         className={`splide__arrow ${styles["custom__arrow"]} splide__arrow--next ${styles["custom__arrow--next"]}`}
       >
         <img
+          alt="to Next Slide"
           className={styles["arrow-image"]}
           src="/assets/images/gallery-button-R.png"
-          alt="to Next Slide"
         />
       </button>
     </div>
