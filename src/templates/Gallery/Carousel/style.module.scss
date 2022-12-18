@@ -1,17 +1,6 @@
 @import "variables";
 @import "functions";
 
-.pic {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: $side-padding-pc;
-  @include mq() {
-    padding: $side-padding-sp;
-  }
-}
-
 .image {
   display: block;
   width: 100%;
@@ -33,4 +22,23 @@
   height: 10px;
   background: #ccc;
   opacity: 1;
+}
+
+.custom__arrow {
+  background: transparent;
+  width: 30px;
+  height: 30px;
+}
+
+.custom__arrow--prev {
+  left: calc(50% - 365px);
+}
+
+.custom__arrow--next {
+  right: calc(50% - 365px);
+}
+
+.arrow-image {
+  width: 100%;
+  height: auto;
 }

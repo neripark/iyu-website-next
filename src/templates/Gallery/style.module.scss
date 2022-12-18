@@ -4,6 +4,7 @@
 .gallery {
   background: $white;
   padding-bottom: 140px;
+  overflow: hidden;
   @include mq() {
     padding-bottom: 94px;
   }
