@@ -12,6 +12,11 @@ export const useHooks = () => {
     );
   }, []);
 
+  // 初回用
+  useEffect(() => {
+    handleScroll();
+  }, [handleScroll]);
+
   useEffect(() => {
     if (typeof window === undefined) return;
     window.addEventListener("scroll", () => {
