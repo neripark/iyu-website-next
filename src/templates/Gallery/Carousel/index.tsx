@@ -29,6 +29,11 @@ export const Carousel: React.FC = () => (
   <Splide
     aria-label="私のお気に入りの画像集"
     options={{
+      classes: {
+        pagination: `splide__pagination ${styles["custom__pagination"]}`,
+        page: `splide__pagination__page ${styles["custom__pagination__page"]}`,
+      },
+      pagination: true,
       type: "loop",
       perPage: 3,
       focus: "center",
@@ -59,5 +64,18 @@ export const Carousel: React.FC = () => (
         />
       </SplideSlide>
     ))}
+    {/* note:
+        アクティブなページネーションボタンのみにclassを渡すことができないため、 module.css で scoped にできない。
+        scoped ではないCSSファイルを読み込もうとすると、 `App.tsx` 以外の場所から読み込まないでねという趣旨のエラーが
+        Next.js から出力されるためここに書いている。
+     */}
+    <style>
+      {`
+      .${styles["custom__pagination__page"]}.is-active {
+        background: #36afca;
+        transform: none;
+      }
+    `}
+    </style>
   </Splide>
 );
