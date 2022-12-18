@@ -12,6 +12,7 @@
     "format-check": "prettier --check ."
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "contentful": "^9.2.13",
     "dayjs": "^1.11.6",
     "next": "^13.0.5",

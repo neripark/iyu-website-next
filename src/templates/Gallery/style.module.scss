@@ -3,25 +3,16 @@
 
 .gallery {
   background: $white;
-  padding-bottom: 80px;
-  overflow: hidden; // カルーセルが飛び出ないよう対策
+  padding-bottom: 140px;
+  overflow: hidden;
   @include mq() {
-    padding-bottom: 50px;
+    padding-bottom: 94px;
   }
 }
 
-.pic {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: $side-padding-pc;
+.carousel {
+  margin-top: 30px;
   @include mq() {
-    padding: $side-padding-sp;
+    margin-top: 15px;
   }
-}
-
-.image {
-  width: 20%;
-  height: auto;
 }

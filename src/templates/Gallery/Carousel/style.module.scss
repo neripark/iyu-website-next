@@ -1,0 +1,44 @@
+@import "variables";
+@import "functions";
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// ____________ for splide ____________
+//
+.custom__pagination {
+  bottom: -60px;
+  @include mq() {
+    bottom: -45px;
+  }
+}
+
+.custom__pagination__page {
+  margin: 10px;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  opacity: 1;
+}
+
+.custom__arrow {
+  background: transparent;
+  width: 30px;
+  height: 30px;
+}
+
+.custom__arrow--prev {
+  left: calc(50% - 365px);
+}
+
+.custom__arrow--next {
+  right: calc(50% - 365px);
+}
+
+.arrow-image {
+  width: 100%;
+  height: auto;
+}
