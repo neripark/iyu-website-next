@@ -8,7 +8,8 @@ export const useHooks = () => {
     if (typeof window === undefined) return;
     setIsScrollStarted(window.pageYOffset > 0);
     setIsScrolled1vh(
-      window.pageYOffset > window.innerHeight - ref.current!.clientHeight
+      ref.current !== null &&
+        window.pageYOffset > window.innerHeight - ref.current.clientHeight
     );
   }, []);
 
