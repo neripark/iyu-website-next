@@ -1,3 +1,5 @@
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/css";
 import styles from "./style.module.scss";
 
 const carouselImages = [
@@ -24,17 +26,38 @@ const carouselImages = [
 ];
 
 export const Carousel: React.FC = () => (
-  <div className={styles["pic"]}>
+  <Splide
+    aria-label="私のお気に入りの画像集"
+    options={{
+      type: "loop",
+      perPage: 3,
+      focus: "center",
+      gap: 30,
+      padding: 30,
+      fixedWidth: "700px",
+      breakpoints: {
+        760: {
+          // note: 画像の固定幅 700 + 左右 padding 30
+          fixedWidth: "100%",
+        },
+        600: {
+          padding: 15,
+        },
+      },
+      // note: デフォルトでは方向はmaxだが、minに変更できる。CSS側で統一できたらこちらも統一する
+      // mediaQuery: "min"
+    }}
+  >
     {carouselImages.map((element) => (
       // todo: カルーセルできていけそうなら next/image を使う
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        alt={element.alt}
-        className={styles["image"]}
-        key={element.src}
-        loading="lazy"
-        src={element.src}
-      />
+      <SplideSlide key={element.src}>
+        <img
+          alt={element.alt}
+          className={styles["image"]}
+          loading="lazy"
+          src={element.src}
+        />
+      </SplideSlide>
     ))}
-  </div>
+  </Splide>
 );
