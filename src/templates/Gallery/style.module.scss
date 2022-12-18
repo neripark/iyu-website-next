@@ -9,19 +9,3 @@
     padding-bottom: 50px;
   }
 }
-
-.pic {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: $side-padding-pc;
-  @include mq() {
-    padding: $side-padding-sp;
-  }
-}
-
-.image {
-  width: 20%;
-  height: auto;
-}
