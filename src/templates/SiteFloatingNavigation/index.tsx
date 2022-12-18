@@ -8,7 +8,7 @@ export const SiteFloatingNavigation: React.FC = () => {
     <nav
       className={`${styles["site-floating-nav"]} 
       ${hooks.isScrollStarted ? styles["is-scroll-start"] : ""} ${
-        hooks.isScrolled1vh ? styles["is-window-top"] : ""
+        hooks.isScrolledOver1vh ? styles["is-window-top"] : ""
       }
       `}
       ref={hooks.ref}
