@@ -1,5 +1,6 @@
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
+import Image from "next/image";
 import { images } from "./images";
 import styles from "./style.module.scss";
 
@@ -39,8 +40,9 @@ export const Carousel: React.FC<Props> = (props) => (
   >
     <SplideTrack>
       {images.map((element) => (
-        // todo: カルーセルできていけそうなら next/image を使う
         <SplideSlide key={element.src}>
+          {/* note: 画像のオリジナルサイズが揃い、問題なければ next/image に置き換える */}
+          {/* eslint-disable @next/next/no-img-element */}
           <img
             alt={element.alt}
             className={styles["image"]}
@@ -55,19 +57,23 @@ export const Carousel: React.FC<Props> = (props) => (
       <button
         className={`splide__arrow ${styles["custom__arrow"]} splide__arrow--prev ${styles["custom__arrow--prev"]}`}
       >
-        <img
+        <Image
           alt="to Previous Slide"
           className={styles["arrow-image"]}
+          height="30"
           src="/assets/images/gallery-button-L.png"
+          width="30"
         />
       </button>
       <button
         className={`splide__arrow ${styles["custom__arrow"]} splide__arrow--next ${styles["custom__arrow--next"]}`}
       >
-        <img
+        <Image
           alt="to Next Slide"
           className={styles["arrow-image"]}
+          height="30"
           src="/assets/images/gallery-button-R.png"
+          width="30"
         />
       </button>
     </div>
