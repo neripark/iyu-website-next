@@ -15,14 +15,16 @@
 .image {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 // ____________ for splide ____________
 //
 .custom__pagination {
-  position: static;
-  margin-top: 30px;
+  bottom: -60px;
+  @include mq() {
+    bottom: -45px;
+  }
 }
 
 .custom__pagination__page {
@@ -30,4 +32,5 @@
   width: 10px;
   height: 10px;
   background: #ccc;
+  opacity: 1;
 }

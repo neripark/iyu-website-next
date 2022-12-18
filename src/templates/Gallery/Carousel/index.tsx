@@ -3,7 +3,11 @@ import "@splidejs/splide/css";
 import { images } from "./images";
 import styles from "./style.module.scss";
 
-export const Carousel: React.FC = () => (
+interface Props {
+  className?: string;
+}
+
+export const Carousel: React.FC<Props> = (props) => (
   <Splide
     aria-label="私のお気に入りの画像集"
     options={{
@@ -13,15 +17,14 @@ export const Carousel: React.FC = () => (
       },
       pagination: true,
       type: "loop",
-      perPage: 3,
       focus: "center",
-      gap: 30,
-      padding: 30,
-      fixedWidth: "700px",
+      gap: 60,
+      padding: 60,
+      fixedWidth: 640,
       breakpoints: {
-        760: {
-          // note: 画像の固定幅 700 + 左右 padding 30
+        700: {
           fixedWidth: "100%",
+          padding: 30,
         },
         600: {
           padding: 15,
@@ -30,6 +33,7 @@ export const Carousel: React.FC = () => (
       // note: デフォルトでは方向はmaxだが、minに変更できる。CSS側で統一できたらこちらも統一する
       // mediaQuery: "min"
     }}
+    className={props.className}
   >
     {images.map((element) => (
       // todo: カルーセルできていけそうなら next/image を使う
