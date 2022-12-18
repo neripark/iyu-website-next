@@ -10,7 +10,7 @@ interface Props {
 
 export const Carousel: React.FC<Props> = (props) => (
   <Splide
-    aria-label="私のお気に入りの画像集"
+    aria-label="iyu gallery"
     className={props.className}
     hasTrack={false}
     options={{
