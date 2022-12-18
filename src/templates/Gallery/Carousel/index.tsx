@@ -1,29 +1,7 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
+import { images } from "./images";
 import styles from "./style.module.scss";
-
-const carouselImages = [
-  {
-    src: "/assets/images/gallery-sky.jpg",
-    alt: "gallery sky",
-  },
-  {
-    src: "/assets/images/gallery-setasu-last.jpg",
-    alt: "setagaya suside last scene",
-  },
-  {
-    src: "/assets/images/gallery-daniel-mv.jpg",
-    alt: "daniel mv offshot",
-  },
-  {
-    src: "/assets/images/gallery-car-beam.jpg",
-    alt: "gallery car beam",
-  },
-  {
-    src: "/assets/images/gallery-car-light.jpg",
-    alt: "gallery car light",
-  },
-];
 
 export const Carousel: React.FC = () => (
   <Splide
@@ -53,7 +31,7 @@ export const Carousel: React.FC = () => (
       // mediaQuery: "min"
     }}
   >
-    {carouselImages.map((element) => (
+    {images.map((element) => (
       // todo: カルーセルできていけそうなら next/image を使う
       <SplideSlide key={element.src}>
         <img
