@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import { dummyLives } from "./mockData";
 
 export const getLiveInfo = async (): Promise<Live[]> => {
-  // todo: 使用頻度が増えたら msw などの採用を考える。現状は contentful からはモックの手段は提供されていない様子
+  // note: 使用頻度が増えたら msw などの採用を考えること。現状は contentful からはモックの手段は提供されていない様子
   if (process.env.APP_ENV === "local") {
     return dummyLives;
   }

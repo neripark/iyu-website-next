@@ -46,10 +46,6 @@ export const SiteHamburgerNavigation: React.FC = () => {
         nodeRef={hooks.ref}
         timeout={200} // css側と合わせる
         unmountOnExit
-        // onEntering={() => console.log("onEntering...")}
-        // onEnter={() => console.log("onEnter!")}
-        // onExiting={() => console.log("onExiting...")}
-        // onExited={() => console.log("onExited!")}
       >
         <CommonNavigation onClickLink={hooks.close} ref={hooks.ref} />
       </CSSTransition>
