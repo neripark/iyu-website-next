@@ -20,7 +20,7 @@ export const useHooks = () => {
       setUserInput((prev) => {
         return {
           ...prev,
-          [e.target.name]: e.target.value,
+          [e.target.name]: e.target.value || undefined,
         };
       });
     },
