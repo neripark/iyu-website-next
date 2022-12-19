@@ -15,7 +15,6 @@
 
 .wrap-photo {
   width: 100%;
-  // min-height: 300px; // loading中の高さを確保
   overflow: hidden;
   position: relative;
   @include mq(fhd) {
@@ -24,7 +23,6 @@
   }
 }
 
-// todo: ナビゲーションができたら全サイズで画像調整する
 .profile-photo {
   width: 100%;
   height: auto;
@@ -34,7 +32,7 @@
   left: 50%;
   transform: translateX(-50%);
   user-select: none;
-  pointer-events: none; // ドラッグ禁止
+  pointer-events: none;
   @include mq(tb) {
     min-width: 900px;
     height: auto;
