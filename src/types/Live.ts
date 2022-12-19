@@ -1,5 +1,5 @@
 export type Live = {
-  date: string;
+  date: `${number}${number}${number}${number}-${number}${number}-${number}${number}`;
   title: string;
   place: string;
   timeOpen: string;

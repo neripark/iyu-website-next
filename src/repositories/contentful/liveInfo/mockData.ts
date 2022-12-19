@@ -2,7 +2,7 @@ import { Live } from "@/types";
 
 export const dummyLives: Live[] = [
   {
-    date: "2022/12/31 (Sat)",
+    date: "2022-12-31",
     title: "イベントaaa",
     place: "とあるライブハウス1",
     timeOpen: "17:00",
@@ -17,7 +17,7 @@ export const dummyLives: Live[] = [
     ],
   },
   {
-    date: "2023/1/31 (Sat)",
+    date: "2023-01-31",
     title: "イベントbbb とっても楽しくて名前がとてーもながいイベント",
     place: "とあるライブハウス2",
     timeOpen: "20:00",
@@ -26,7 +26,7 @@ export const dummyLives: Live[] = [
     with: ["ダミーシンガー", "ダミーソロアーティスト"],
   },
   {
-    date: "2024/1/24 (Mon)",
+    date: "2024-01-24",
     title: "イベントccc ご飯がおいしいイベント",
     place: "とあるライブハウス3",
     timeOpen: "11:30",
