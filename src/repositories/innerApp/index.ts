@@ -1,4 +1,4 @@
-import { ContactFormItem, SubmitItem } from "@/types/ContactForm";
+import { ContactFormItem } from "@/types/ContactForm";
 
 const URL = "/api/receiveContactForm"; // Next.js api
 
@@ -17,11 +17,10 @@ export const postContactForm = (
 
 const encode = (contactFormItem: Partial<ContactFormItem>) => {
   const data = {
-    "form-name": "iyu-form", // todo: form 要素から取得できるか確認する。そのほうが堅牢
     ...contactFormItem,
   };
 
-  return (Object.keys(data) as (keyof SubmitItem)[])
+  return (Object.keys(data) as (keyof ContactFormItem)[])
     .map(
       (key) =>
         `${encodeURIComponent(key)}=${encodeURIComponent(data[key] || "")}`
