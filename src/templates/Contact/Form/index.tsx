@@ -17,10 +17,7 @@ const FormParts: React.FC = () => {
   return (
     <form
       className={styles["contact-form"]}
-      data-netlify="true"
       method="POST"
-      name="iyu-form"
-      netlify-honeypot="bot-field" // todo: netlify の form に認識されるか確認し、要不要を決める。preventDefault 書いてるからたぶんだめ？
       onSubmit={hooks.onSubmit}
     >
       <Input

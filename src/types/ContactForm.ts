@@ -25,5 +25,3 @@ interface UnSelectedLive extends Basic {
 }
 
 export type ContactFormItem = SelectedLive | UnSelectedLive;
-
-export type SubmitItem = ContactFormItem & { "form-name": string };
