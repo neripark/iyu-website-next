@@ -16,8 +16,8 @@ export const SiteHamburgerNavigation: React.FC = () => {
       <p className={styles["wrap-img"]}>
         <AnchorLink
           className={styles["anchor"]}
-          href={`#${hooks.anchorListAbsorbedDevice.mainVisual.id}`}
-          offset={hooks.anchorListAbsorbedDevice.mainVisual.offset}
+          href={`#${hooks.offsetList.mainVisual.id}`}
+          offset={hooks.offsetList.mainVisual.offset}
         >
           <Image
             alt="iyu-logo"
