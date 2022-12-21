@@ -21,7 +21,7 @@ export const useOffsetListAbsorbedDevice = () => {
         ? anchorList[element].offsetSp
         : anchorList[element].offsetPc,
     }));
-  }, [_isSp]);
+  }, [_isSp, keyList]);
 
   const anchorListAbsorbedDevice = useMemo(() => {
     return keyList.reduce((prev, current) => {
@@ -34,7 +34,7 @@ export const useOffsetListAbsorbedDevice = () => {
       };
       return prev;
     }, {} as AnchorListAbsorbedDevice);
-  }, [_isSp]);
+  }, [_isSp, keyList]);
 
   return { offsetArrayAbsorbedDevice, anchorListAbsorbedDevice };
 };
