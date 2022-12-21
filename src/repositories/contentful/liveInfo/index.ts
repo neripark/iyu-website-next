@@ -19,6 +19,7 @@ const repository = async () => {
   const livePosts = await getEntries<Live>({
     content_type: "liveInfo",
     "fields.date[gte]": pastOneWeekFromNow,
+    order: "fields.date",
   }).catch((err) => {
     throw new Error(
       `Error: contentful からLive情報を取得できませんでした。${err}`
