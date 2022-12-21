@@ -18,6 +18,7 @@ export const useHooks = () => {
 
   useEffect(() => {
     if (typeof window === undefined) return;
+    updateIsScrollTop(window.scrollY < ADJUST_POSITION); // 初回用
     window.addEventListener("scroll", () => {
       updateIsScrollTop(window.scrollY < ADJUST_POSITION);
     });
