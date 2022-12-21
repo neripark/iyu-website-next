@@ -1,7 +1,8 @@
 import { useOffsetListAbsorbedDevice } from "@/hooks/useOffsetListAbsorbedDevice";
 
 export const useHooks = () => {
-  const offsetList = useOffsetListAbsorbedDevice();
+  const { offsetArrayAbsorbedDevice: offsetList } =
+    useOffsetListAbsorbedDevice();
 
   return {
     offsetList,

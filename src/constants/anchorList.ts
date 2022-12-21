@@ -1,6 +1,6 @@
 import { SectionName } from "@/types";
 
-type Offset = {
+export type Offset = {
   id: string;
   label: string;
   offsetPc: number;
