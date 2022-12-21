@@ -17,7 +17,7 @@ export const dummyLives: Live[] = [
     ],
   },
   {
-    date: "2023-01-31",
+    date: "2023-01-01",
     title: "イベントbbb とっても楽しくて名前がとてーもながいイベント",
     place: "とあるライブハウス2",
     timeOpen: "20:00",
