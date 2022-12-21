@@ -11,38 +11,33 @@ type AnchorListAbsorbedDevice = Record<SectionName, OffsetAbsorbedDevice>;
 
 export const useOffsetListAbsorbedDevice = () => {
   const _isSp = useMemo(() => isSp(), []);
+  const keyList = Object.keys(anchorList) as (keyof typeof anchorList)[];
 
   const offsetArrayAbsorbedDevice = useMemo(() => {
-    return (
-      (Object.keys(anchorList) as (keyof typeof anchorList)[])
-        // todo: UI側でフィルタリングするようにする
-        .filter((element) => element !== "mainVisual")
-        .map((element) => {
-          return {
-            id: anchorList[element].id,
-            label: anchorList[element].label,
-            offset: _isSp
-              ? anchorList[element].offsetSp
-              : anchorList[element].offsetPc,
-          };
-        })
-    );
+    return keyList
+      .filter((element) => element !== "mainVisual") // todo: UI側でフィルタリングするようにする
+      .map((element) => {
+        return {
+          id: anchorList[element].id,
+          label: anchorList[element].label,
+          offset: _isSp
+            ? anchorList[element].offsetSp
+            : anchorList[element].offsetPc,
+        };
+      });
   }, [_isSp]);
 
   const anchorListAbsorbedDevice = useMemo(() => {
-    return (Object.keys(anchorList) as (keyof typeof anchorList)[]).reduce(
-      (prev, current) => {
-        prev[current] = {
-          id: anchorList[current].id,
-          label: anchorList[current].label,
-          offset: _isSp
-            ? anchorList[current].offsetSp
-            : anchorList[current].offsetPc,
-        };
-        return prev;
-      },
-      {} as AnchorListAbsorbedDevice
-    );
+    return keyList.reduce((prev, current) => {
+      prev[current] = {
+        id: anchorList[current].id,
+        label: anchorList[current].label,
+        offset: _isSp
+          ? anchorList[current].offsetSp
+          : anchorList[current].offsetPc,
+      };
+      return prev;
+    }, {} as AnchorListAbsorbedDevice);
   }, [_isSp]);
 
   return { offsetArrayAbsorbedDevice, anchorListAbsorbedDevice };
