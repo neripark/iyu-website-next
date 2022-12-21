@@ -1,5 +1,5 @@
 import { Heading } from "@/components/Heading";
-import { anchorList } from "@/containers/CommonNavigation/anchorList";
+import { anchorList } from "@/constants/anchorList";
 import { CardGroup } from "./CardGroup";
 import { InformationText } from "./InformationText";
 import styles from "./style.module.scss";
