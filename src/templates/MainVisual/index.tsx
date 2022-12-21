@@ -1,4 +1,4 @@
-import { anchorList } from "@/containers/CommonNavigation/anchorList";
+import { anchorList } from "@/constants/anchorList";
 import Image from "next/image";
 import { InformationSummary } from "./InformationSummary";
 import styles from "./style.module.scss";

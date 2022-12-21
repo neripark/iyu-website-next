@@ -1,5 +1,6 @@
 import { CommonNavigation } from "@/containers/CommonNavigation";
 import Image from "next/image";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import { CSSTransition } from "react-transition-group";
 import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
@@ -13,7 +14,11 @@ export const SiteHamburgerNavigation: React.FC = () => {
       }`}
     >
       <p className={styles["wrap-img"]}>
-        <a className={styles["anchor"]}>
+        <AnchorLink
+          className={styles["anchor"]}
+          href={`#${hooks.offsetList.mainVisual.id}`}
+          offset={hooks.offsetList.mainVisual.offset}
+        >
           <Image
             alt="iyu-logo"
             className={styles["logo"]}
@@ -21,7 +26,7 @@ export const SiteHamburgerNavigation: React.FC = () => {
             src="/assets/images/iyu-logo-White.svg"
             width={70}
           />
-        </a>
+        </AnchorLink>
       </p>
       <button
         aria-label={hooks.buttonLabel}

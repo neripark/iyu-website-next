@@ -1,22 +1,21 @@
-import { LiveInformationContext } from "@/providers/LiveInformationProvider";
-import { useContext } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
 
 export const InformationText: React.FC = () => {
-  const { lives } = useContext(LiveInformationContext);
+  const hooks = useHooks();
   return (
     <div>
-      {lives.length > 0 ? (
+      {hooks.lives.length > 0 ? (
         <p className={styles["lead"]}>
           <span>チケットのお取置きは</span>
-          <a
-            // todo: アンカーリンク実装
-            // v-scroll-to="scrollTo(anchorList.contact)"
+          <AnchorLink
             className={styles["text-link"]}
-            href="`#${anchorList.profile.id}`"
+            href={`#${hooks.anchorList.contact.id}`}
+            offset={hooks.anchorList.contact.offset}
           >
             こちらのフォーム
-          </a>
+          </AnchorLink>
           から。
           <br />
           <a

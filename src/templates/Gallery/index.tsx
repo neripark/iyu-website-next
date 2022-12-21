@@ -1,5 +1,5 @@
 import { Heading } from "@/components/Heading";
-import { anchorList } from "@/containers/CommonNavigation/anchorList";
+import { anchorList } from "@/constants/anchorList";
 import { Carousel } from "./Carousel";
 import styles from "./style.module.scss";
 
