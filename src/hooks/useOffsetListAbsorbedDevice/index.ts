@@ -14,17 +14,13 @@ export const useOffsetListAbsorbedDevice = () => {
   const keyList = Object.keys(anchorList) as (keyof typeof anchorList)[];
 
   const offsetArrayAbsorbedDevice = useMemo(() => {
-    return keyList
-      .filter((element) => element !== "mainVisual") // todo: UI側でフィルタリングするようにする
-      .map((element) => {
-        return {
-          id: anchorList[element].id,
-          label: anchorList[element].label,
-          offset: _isSp
-            ? anchorList[element].offsetSp
-            : anchorList[element].offsetPc,
-        };
-      });
+    return keyList.map((element) => ({
+      id: anchorList[element].id,
+      label: anchorList[element].label,
+      offset: _isSp
+        ? anchorList[element].offsetSp
+        : anchorList[element].offsetPc,
+    }));
   }, [_isSp]);
 
   const anchorListAbsorbedDevice = useMemo(() => {

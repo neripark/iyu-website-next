@@ -14,7 +14,7 @@ export const CommonNavigation = forwardRef<HTMLUListElement, Props>(
     const hooks = useHooks();
     return (
       <ul className={styles["anchor-list"]} ref={ref}>
-        {hooks.offsetList.map((element) => {
+        {hooks.anchorList.map((element) => {
           return (
             <Item {...element} key={element.id} onClick={props.onClickLink} />
           );

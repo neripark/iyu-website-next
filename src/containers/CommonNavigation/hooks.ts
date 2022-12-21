@@ -1,10 +1,12 @@
 import { useOffsetListAbsorbedDevice } from "@/hooks/useOffsetListAbsorbedDevice";
 
 export const useHooks = () => {
-  const { offsetArrayAbsorbedDevice: offsetList } =
-    useOffsetListAbsorbedDevice();
+  const { offsetArrayAbsorbedDevice } = useOffsetListAbsorbedDevice();
+  const filteredAnchorList = offsetArrayAbsorbedDevice.filter(
+    (element) => element.id !== "mainVisual"
+  );
 
   return {
-    offsetList,
+    anchorList: filteredAnchorList,
   };
 };
