@@ -1,7 +1,9 @@
+import { useOffsetListAbsorbedDevice } from "@/hooks/useOffsetListAbsorbedDevice";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 export const useHooks = () => {
   const ADJUST_POSITION = 500; // 適当
+  const { anchorListAbsorbedDevice } = useOffsetListAbsorbedDevice();
   const [isOpen, setIsOpen] = useState(false);
   const onClickHamburgerButton = () => {
     setIsOpen((prev) => !prev);
@@ -32,5 +34,6 @@ export const useHooks = () => {
     buttonLabel,
     onClickHamburgerButton,
     ref,
+    anchorListAbsorbedDevice,
   };
 };
