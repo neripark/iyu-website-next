@@ -4,10 +4,11 @@ import { useContext } from "react";
 
 export const useHooks = () => {
   const { lives } = useContext(LiveInformationContext);
-  const { anchorListAbsorbedDevice } = useOffsetListAbsorbedDevice();
+  const { anchorListAbsorbedDevice: anchorList } =
+    useOffsetListAbsorbedDevice();
 
   return {
     lives,
-    anchorListAbsorbedDevice,
+    anchorList,
   };
 };

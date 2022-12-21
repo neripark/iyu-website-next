@@ -11,8 +11,8 @@ export const InformationText: React.FC = () => {
           <span>チケットのお取置きは</span>
           <AnchorLink
             className={styles["text-link"]}
-            href={`#${hooks.anchorListAbsorbedDevice.contact.id}`}
-            offset={hooks.anchorListAbsorbedDevice.contact.offset}
+            href={`#${hooks.anchorList.contact.id}`}
+            offset={hooks.anchorList.contact.offset}
           >
             こちらのフォーム
           </AnchorLink>
