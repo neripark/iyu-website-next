@@ -30,7 +30,7 @@ export const useOffsetListAbsorbedDevice = () => {
   }, [_isSp]);
 
   const anchorListAbsorbedDevice = useMemo(() => {
-    const obj = (Object.keys(anchorList) as (keyof typeof anchorList)[]).reduce(
+    return (Object.keys(anchorList) as (keyof typeof anchorList)[]).reduce(
       (prev, current) => {
         prev[current] = {
           id: anchorList[current].id,
@@ -43,7 +43,6 @@ export const useOffsetListAbsorbedDevice = () => {
       },
       {} as AnchorListAbsorbedDevice
     );
-    return obj;
   }, [_isSp]);
 
   return { offsetArrayAbsorbedDevice, anchorListAbsorbedDevice };
