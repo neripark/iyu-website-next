@@ -14,7 +14,6 @@ export const getLiveInfo = async (): Promise<Live[]> => {
 const repository = async () => {
   const now = new Date();
   // note: ライブが終わっても1週間は表示しておく
-  // todo: ただし、Contactフォームの選択肢には入れない。どこでフィルタリングしたほうがいいか考える。
   const pastOneWeekFromNow = dayjs(now).add(1, "w").format("YYYY-MM-DD");
   const livePosts = await getEntries<Live>({
     content_type: "liveInfo",

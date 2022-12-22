@@ -13,8 +13,6 @@ export const InformationSummary: React.FC = () => {
           {lives.length > 0 ? (
             lives.map((element) => (
               <p className={styles["lead"]} key={element.date}>
-                {/* {{ $dayjs(live.date).format('YYYY/M/D (ddd)') }}<br />{{ live.place }} */}
-                {/* todo: フォーマットする */}
                 {element.date} <br />
                 {element.place}
               </p>

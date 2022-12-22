@@ -16,17 +16,13 @@ export const MainVisual: React.FC = () => {
         />
       </h1>
       <InformationSummary />
-      {/* todo: PCのときだけ動画をロードできているか確認。なぜかローカルだとNetworkタブに出てこない */}
-      {/* できていなければ OnlyClient 的なコンポーネントを実装する or 使う */}
-      {typeof window !== undefined && (
-        <video
-          autoPlay
-          className={styles["bg-movie"]}
-          loop
-          muted
-          src="/assets/videos/200109_iyu-webtop-video.mp4"
-        />
-      )}
+      <video
+        autoPlay
+        className={styles["bg-movie"]}
+        loop
+        muted
+        src="/assets/videos/200109_iyu-webtop-video.mp4"
+      />
     </section>
   );
 };
