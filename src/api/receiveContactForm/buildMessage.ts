@@ -37,7 +37,7 @@ const toUser = (commonMessage: string) => {
 以下の内容で承りました。
 
 内容確認次第、メンバーからご返信いたします。
-数日経っても返信がない場合は、大変お手数ですが、Twitter DM にてご連絡をお願いいたします。
+数日経っても返信がない場合は、大変恐れ入りますが、Twitter DM にてご連絡をお願いいたします。
 
 --
 ${commonMessage}
