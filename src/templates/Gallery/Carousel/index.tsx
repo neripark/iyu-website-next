@@ -40,10 +40,8 @@ export const Carousel: React.FC<Props> = (props) => (
   >
     <SplideTrack>
       {images.map((element) => (
-        <SplideSlide key={element.src}>
-          {/* note: 画像のオリジナルサイズが揃い、問題なければ next/image に置き換える */}
-          {/* eslint-disable @next/next/no-img-element */}
-          <img
+        <SplideSlide key={element.key}>
+          <Image
             alt={element.alt}
             className={styles["image"]}
             loading="lazy"

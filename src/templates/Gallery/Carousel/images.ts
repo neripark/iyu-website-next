@@ -1,22 +1,33 @@
+import carBeam from "@/../public/assets/images/gallery-car-beam.jpg";
+import carLight from "@/../public/assets/images/gallery-car-light.jpg";
+import danielMv from "@/../public/assets/images/gallery-daniel-mv.jpg";
+import setasuLast from "@/../public/assets/images/gallery-setasu-last.jpg";
+import sky from "@/../public/assets/images/gallery-sky.jpg";
+
 export const images = [
   {
-    src: "/assets/images/gallery-sky.jpg",
+    key: "sky",
+    src: sky,
     alt: "gallery sky",
   },
   {
-    src: "/assets/images/gallery-setasu-last.jpg",
+    key: "setasuLast",
+    src: setasuLast,
     alt: "setagaya suside last scene",
   },
   {
-    src: "/assets/images/gallery-daniel-mv.jpg",
+    key: "danielMv",
+    src: danielMv,
     alt: "daniel mv offshot",
   },
   {
-    src: "/assets/images/gallery-car-beam.jpg",
+    key: "carBeam",
+    src: carBeam,
     alt: "gallery car beam",
   },
   {
-    src: "/assets/images/gallery-car-light.jpg",
+    key: "carLight",
+    src: carLight,
     alt: "gallery car light",
   },
 ];
