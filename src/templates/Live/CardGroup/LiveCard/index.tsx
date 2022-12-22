@@ -14,11 +14,7 @@ interface Props {
 export const LiveCard: React.FC<Props> = (props) => (
   <li className={styles["live-card"]}>
     <div className={styles["date"]}>
-      <p className={styles["ymd"]}>
-        {/* todo: 日付変換する */}
-        {/* { $dayjs(props.date).format('YYYY/M/D (ddd)') } */}
-        {props.date}
-      </p>
+      <p className={styles["ymd"]}>{props.date}</p>
     </div>
     <div className={styles["detail"]}>
       <p className={styles["title"]}>{props.title}</p>

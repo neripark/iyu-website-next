@@ -7,6 +7,7 @@
 
 // breakpoints
 // todo: max と min を両方使っていてカオスなのでリファクタする
+// https://github.com/neripark/iyu-website-next/issues/46
 $breakpoints: (
   "ssm": "max-width: 450px",
   // mixin側のデフォルト値
