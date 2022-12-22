@@ -1,7 +1,8 @@
 import { createTransport } from "nodemailer";
 
 interface Props {
-  title: string;
+  to: string;
+  subject: string;
   body: string;
 }
 
@@ -22,8 +23,10 @@ export const sendMailByGmail = async (props: Props) => {
       }iyu Webサイト`,
       address: process.env.MAIL_USER || "",
     },
-    to: process.env.MAIL_TO,
-    subject: props.title,
+    to: props.to,
+    subject: `${process.env.NODE_ENV !== "production" ? "[test] " : ""}${
+      props.subject
+    }`,
     text: props.body,
   });
 };
