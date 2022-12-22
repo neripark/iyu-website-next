@@ -60,14 +60,3 @@
     margin-top: 5px;
   }
 }
-
-// todo: コンポーネントに切り出し
-.text-link {
-  color: $white;
-  text-decoration: underline;
-  margin: 0 0.2em;
-  @include selection-color();
-  &:hover {
-    text-decoration: none;
-  }
-}

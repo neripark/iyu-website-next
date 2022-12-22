@@ -1,4 +1,4 @@
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { TextAnchorLink, TextLink } from "@/components/TextLink";
 import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
 
@@ -9,23 +9,21 @@ export const InformationText: React.FC = () => {
       {hooks.lives.length > 0 ? (
         <p className={styles["lead"]}>
           <span>チケットのお取置きは</span>
-          <AnchorLink
-            className={styles["text-link"]}
+          <TextAnchorLink
             href={`#${hooks.anchorList.contact.id}`}
             offset={hooks.anchorList.contact.offset}
           >
             こちらのフォーム
-          </AnchorLink>
+          </TextAnchorLink>
           から。
           <br />
-          <a
-            className={styles["text-link"]}
+          <TextLink
             href="https://twitter.com/iyu_band"
             rel="noreferrer"
             target="_blank"
           >
             Twitter
-          </a>
+          </TextLink>
           でも承っております。
         </p>
       ) : (
@@ -34,14 +32,13 @@ export const InformationText: React.FC = () => {
           <br />
           発表をお待ち下さい！
           <br />
-          <a
-            className={styles["text-link"]}
+          <TextLink
             href="https://twitter.com/iyu_band"
             rel="noreferrer"
             target="_blank"
           >
             Twitter
-          </a>
+          </TextLink>
           もぜひチェックしてくださいね。
         </p>
       )}
