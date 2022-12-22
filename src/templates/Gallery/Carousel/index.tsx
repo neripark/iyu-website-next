@@ -46,6 +46,9 @@ export const Carousel: React.FC<Props> = (props) => (
             className={styles["image"]}
             loading="lazy"
             src={element.src}
+            sizes="(max-width: 600px) 100vw - 30px,
+                   (max-width: 700px) 100vw - 60px,
+                   640px"
           />
         </SplideSlide>
       ))}
