@@ -6,16 +6,6 @@ import sky from "@/assets/images/gallery-sky.jpg";
 
 export const images = [
   {
-    key: "sky",
-    src: sky,
-    alt: "gallery sky",
-  },
-  {
-    key: "setasuLast",
-    src: setasuLast,
-    alt: "setagaya suside last scene",
-  },
-  {
     key: "danielMv",
     src: danielMv,
     alt: "daniel mv offshot",
@@ -29,5 +19,15 @@ export const images = [
     key: "carLight",
     src: carLight,
     alt: "gallery car light",
+  },
+  {
+    key: "sky",
+    src: sky,
+    alt: "gallery sky",
+  },
+  {
+    key: "setasuLast",
+    src: setasuLast,
+    alt: "setagaya suside last scene",
   },
 ];
