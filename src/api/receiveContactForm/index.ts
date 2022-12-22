@@ -8,7 +8,7 @@ type Props = Parameters<typeof handler>;
 
 export const receiveContactForm = async (...props: Props) => {
   const [req] = props;
-  const service = MessageService.getInstance(req.body);
+  const service = new MessageService(req.body);
 
   const result: Result = await Promise.all([
     notifyIyuLine(service),

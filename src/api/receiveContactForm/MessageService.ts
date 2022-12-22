@@ -3,18 +3,10 @@ import { categories, ContactFormItem } from "@/types/ContactForm";
 type Props = ContactFormItem;
 
 export class MessageService {
-  private static instance: MessageService;
   private formItem: ContactFormItem;
 
   constructor(props: Props) {
     this.formItem = props;
-  }
-
-  static getInstance(params?: Props) {
-    if (!MessageService.instance && params !== undefined) {
-      MessageService.instance = new MessageService(params);
-    }
-    return MessageService.instance;
   }
 
   public getUserInput() {
