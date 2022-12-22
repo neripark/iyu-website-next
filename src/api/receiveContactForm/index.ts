@@ -13,7 +13,7 @@ export const receiveContactForm = async (...props: Props) => {
   const result: Result = await Promise.all([
     notifyToLine(messageToIyuMember),
     sendMailToIyuMember(req.body.name, messageToIyuMember),
-    sendMailToUser(messageToUser),
+    sendMailToUser(messageToUser, req.body.email),
   ])
     .then(() => {
       return "ok" as Result;

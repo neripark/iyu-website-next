@@ -1,8 +1,9 @@
 import { sendMailByGmail } from "@/repositories/gmail";
 
-export const sendMailToUser = async (body: string) => {
+export const sendMailToUser = async (body: string, to: string) => {
   return sendMailByGmail({
-    title: `お問い合わせを承りました！`,
+    to,
+    subject: `お問い合わせを承りました！`,
     body,
   })
     .then(() => {
