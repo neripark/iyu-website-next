@@ -1,8 +1,8 @@
-import carBeam from "@/../public/assets/images/gallery-car-beam.jpg";
-import carLight from "@/../public/assets/images/gallery-car-light.jpg";
-import danielMv from "@/../public/assets/images/gallery-daniel-mv.jpg";
-import setasuLast from "@/../public/assets/images/gallery-setasu-last.jpg";
-import sky from "@/../public/assets/images/gallery-sky.jpg";
+import carBeam from "@/assets/images/gallery-car-beam.jpg";
+import carLight from "@/assets/images/gallery-car-light.jpg";
+import danielMv from "@/assets/images/gallery-daniel-mv.jpg";
+import setasuLast from "@/assets/images/gallery-setasu-last.jpg";
+import sky from "@/assets/images/gallery-sky.jpg";
 
 export const images = [
   {
