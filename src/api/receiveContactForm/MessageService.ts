@@ -9,8 +9,13 @@ export class MessageService {
     this.formItem = props;
   }
 
-  public getUserInput() {
-    return this.formItem;
+  // note: 必要なパラメータのみ公開する
+  public get userName() {
+    return this.formItem.name;
+  }
+
+  public get userEmail() {
+    return this.formItem.email;
   }
 
   public getMessageToUser() {

@@ -3,7 +3,7 @@ import { MessageService } from "./MessageService";
 
 export const sendMailToUser = async (service: MessageService) => {
   const body = service.getMessageToUser();
-  const to = service.getUserInput().email;
+  const to = service.userEmail;
 
   return sendMailByGmail({
     to,

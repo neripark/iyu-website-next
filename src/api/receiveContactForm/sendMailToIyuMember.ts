@@ -3,7 +3,7 @@ import { MessageService } from "./MessageService";
 
 export const sendMailToIyuMember = async (service: MessageService) => {
   const body = service.getMessageToIyuMember();
-  const { name } = service.getUserInput();
+  const name = service.userName;
 
   return sendMailByGmail({
     to: process.env.MAIL_TO_IYU_MEMBER || "",
