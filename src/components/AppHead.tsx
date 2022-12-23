@@ -18,7 +18,10 @@ export const AppHead: React.FC = () => {
         content="都内で活動中の新宿系お散歩ポップバンド、iyuの公式Webサイトです。バンドに関するすべての情報を掲載しています。"
         property="og:description"
       />
-      <meta content="https://iyumusic.tokyo/og_image.png" property="og:image" />
+      <meta
+        content="https://iyumusic.tokyo/assets/images/og_image.png"
+        property="og:image"
+      />
       <meta content="@iyu_band" property="twitter:site" />
       <meta content="summary_large_image" property="twitter:card" />
       {/* images */}
