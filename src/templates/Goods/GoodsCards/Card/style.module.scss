@@ -1,10 +1,6 @@
 @import "variables";
 @import "functions";
 
-.root {
-  // position: relative;
-}
-
 .anchor {
   position: relative;
   display: block;
@@ -15,7 +11,7 @@
   height: auto;
 }
 
-.item-information {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,17 +28,17 @@
   opacity: 0;
 }
 
-.anchor:hover .item-information {
+.anchor:hover .overlay {
   opacity: 1;
   visibility: visible;
 }
 
-.item-title {
+.overlay-title {
   color: $white;
   font-size: 14px;
 }
 
-.item-price {
+.overlay-price {
   color: $white;
   font-size: 20px;
   margin-top: 2px;

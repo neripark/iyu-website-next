@@ -13,9 +13,7 @@ export const Card: React.FC<Props> = (_props) => {
   };
 
   return (
-    <li
-      className={`${styles["root"]} ${props.className ? props.className : ""}`}
-    >
+    <li className={`${props.className ? props.className : ""}`}>
       <a
         className={styles["anchor"]}
         href={goodsData[0].href}
@@ -31,11 +29,11 @@ export const Card: React.FC<Props> = (_props) => {
                   (max-width: 700px) 100vw - 60px,
                   640px"
         />
-        <div className={styles["item-information"]}>
-          <p className={styles["item-title"]}>{goodsData[0].label}</p>
-          <p
-            className={styles["item-price"]}
-          >{`¥${goodsData[0].price.toLocaleString()}`}</p>
+        <div className={styles["overlay"]}>
+          <p className={styles["overlay-title"]}>{goodsData[0].label}</p>
+          <p className={styles["overlay-price"]}>
+            {`¥${goodsData[0].price.toLocaleString()}`}
+          </p>
         </div>
       </a>
     </li>
