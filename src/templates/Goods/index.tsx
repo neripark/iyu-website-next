@@ -1,6 +1,7 @@
 import { Heading } from "@/components/Heading";
 import { anchorList } from "@/constants/anchorList";
-import { GoodsCards } from "./GoodsCards";
+import { GoodsCard } from "./GoodsCard";
+import { goodsData } from "./goodsData";
 import styles from "./style.module.scss";
 
 export const Goods: React.FC = () => {
@@ -8,7 +9,11 @@ export const Goods: React.FC = () => {
     <section className={styles["root"]} id={anchorList.goods.id}>
       {/* todo: Heading のテキスト色を確認する */}
       <Heading color="blue">{anchorList.goods.label}</Heading>
-      <GoodsCards />
+      <ul className={styles["card-group"]}>
+        {goodsData.map((element) => (
+          <GoodsCard {...element} />
+        ))}
+      </ul>
     </section>
   );
 };

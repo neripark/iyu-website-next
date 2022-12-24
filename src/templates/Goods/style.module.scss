@@ -6,3 +6,12 @@
   background-color: $light-yellow;
   padding: 0 30px 60px;
 }
+
+.card-group {
+  background-color: $light-yellow;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 56px;
+  max-width: 1000px;
+  margin: 10px auto 0;
+}

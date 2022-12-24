@@ -10,7 +10,7 @@ interface Props {
   price: number;
 }
 
-export const Card: React.FC<Props> = (props) => {
+export const GoodsCard: React.FC<Props> = (props) => {
   return (
     <li>
       <a
