@@ -1,16 +1,13 @@
 import { Card } from "./Card";
+import { goodsData } from "./goodsData";
 import styles from "./style.module.scss";
 
-interface Props {
-  className?: string;
-}
-
-export const GoodsCards: React.FC<Props> = (props) => {
+export const GoodsCards: React.FC = () => {
   return (
-    <ul
-      className={`${styles["root"]} ${props.className ? props.className : ""}`}
-    >
-      <Card className={styles["card"]} />
+    <ul className={styles["root"]}>
+      {goodsData.map((element) => (
+        <Card {...element} />
+      ))}
     </ul>
   );
 };

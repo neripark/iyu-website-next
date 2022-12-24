@@ -4,11 +4,17 @@
 .anchor {
   position: relative;
   display: block;
+  background: $light-gray;
+  padding-bottom: 100%; // タイルの大きさを常に正方形にするため
 }
 
 .image {
   width: 100%;
   height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .overlay {
