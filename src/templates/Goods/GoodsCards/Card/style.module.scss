@@ -27,6 +27,14 @@
   justify-content: center;
   flex-direction: column;
   padding: 20px;
+  transition: opacity 0.2s ease, visibility 0.2s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.anchor:hover .item-information {
+  opacity: 1;
+  visibility: visible;
 }
 
 .item-title {
