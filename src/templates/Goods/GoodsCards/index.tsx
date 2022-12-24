@@ -10,7 +10,7 @@ export const GoodsCards: React.FC<Props> = (props) => {
     <ul
       className={`${styles["root"]} ${props.className ? props.className : ""}`}
     >
-      <Card />
+      <Card className={styles["card"]} />
     </ul>
   );
 };

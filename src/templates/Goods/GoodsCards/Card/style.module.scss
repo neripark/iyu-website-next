@@ -1,7 +1,41 @@
 @import "variables";
 @import "functions";
 
+.root {
+  // position: relative;
+}
+
+.anchor {
+  position: relative;
+  display: block;
+}
+
 .image {
   width: 100%;
   height: auto;
+}
+
+.item-information {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $transparent-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.item-title {
+  color: $white;
+  font-size: 14px;
+}
+
+.item-price {
+  color: $white;
+  font-size: 20px;
+  margin-top: 2px;
 }
