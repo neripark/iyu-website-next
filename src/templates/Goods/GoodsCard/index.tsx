@@ -31,7 +31,8 @@ export const GoodsCard: React.FC<Props> = (props) => {
         <div className={styles["overlay"]}>
           <p className={styles["overlay-title"]}>{props.label}</p>
           <p className={styles["overlay-price"]}>
-            {`¥${props.price.toLocaleString()}`}
+            <span className={styles["unit"]}>¥</span>
+            <span>{props.price.toLocaleString()}</span>
           </p>
         </div>
       </a>
