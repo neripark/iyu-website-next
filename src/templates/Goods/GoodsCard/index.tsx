@@ -16,17 +16,16 @@ export const GoodsCard: React.FC<Props> = (props) => {
       <a
         className={styles["anchor"]}
         href={props.href}
-        target="_black"
         rel="noreferrer"
+        target="_black"
       >
         <Image
-          className={styles["image"]}
-          src={props.src}
           alt={props.label}
-          // todo: あとで値を確認する
+          className={styles["image"]}
           sizes="(max-width: 600px) 100%,
                   (max-width: 700px) 100vw - 60px,
-                  640px"
+                  640px" // todo: あとで値を確認する
+          src={props.src}
         />
         <div className={styles["overlay"]}>
           <p className={styles["overlay-title"]}>{props.label}</p>

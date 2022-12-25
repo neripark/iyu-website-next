@@ -11,7 +11,7 @@ export const Goods: React.FC = () => {
       <Heading color="blue">{anchorList.goods.label}</Heading>
       <ul className={styles["card-group"]}>
         {goodsData.map((element) => (
-          <GoodsCard {...element} />
+          <GoodsCard {...element} key={element.key} />
         ))}
       </ul>
     </section>
