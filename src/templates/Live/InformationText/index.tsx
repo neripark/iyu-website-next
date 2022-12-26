@@ -8,7 +8,7 @@ export const InformationText: React.FC = () => {
     <div>
       {hooks.lives.length > 0 ? (
         <p className={styles["lead"]}>
-          <span>チケットのお取置きは</span>
+          チケットのお取置きは
           <TextAnchorLink
             href={`#${hooks.anchorList.contact.id}`}
             offset={hooks.anchorList.contact.offset}
