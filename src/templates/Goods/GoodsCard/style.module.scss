@@ -3,7 +3,10 @@
 
 .anchor {
   position: relative;
-  display: block;
+}
+
+.image-wrapper {
+  position: relative;
   background: $light-gray;
   padding-bottom: 100%; // タイルの大きさを常に正方形にするため
 }
@@ -15,6 +18,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @include mq() {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .overlay {
@@ -32,6 +39,13 @@
   transition: opacity 0.2s ease, visibility 0.2s;
   visibility: hidden;
   opacity: 0;
+  @include mq() {
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    height: auto;
+    background: $dark-gray;
+  }
 }
 
 .anchor:hover .overlay {
