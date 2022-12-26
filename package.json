@@ -12,7 +12,8 @@
     "lint-fix": "next lint --fix",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
-    "hcm": "hcm 'src/**/*.module.{css,scss}' --sassLoadPaths=src/styles"
+    "hcm": "hcm 'src/**/*.module.{css,scss}' --sassLoadPaths=src/styles",
+    "postinstall": "npm run hcm"
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
