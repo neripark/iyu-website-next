@@ -18,3 +18,10 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run format-check
+      # - run: npx tsc --noEmit # GitHub Actions 上のみ以下エラーが出るためいったんコメントアウト
+      # Error: src/templates/Gallery/Carousel/images.ts(1,21): error TS2307: Cannot find module '@/assets/images/gallery-car-beam.jpg' or its corresponding type declarations.
+      # Error: src/templates/Gallery/Carousel/images.ts(2,22): error TS2307: Cannot find module '@/assets/images/gallery-car-light.jpg' or its corresponding type declarations.
+      # Error: src/templates/Gallery/Carousel/images.ts(3,22): error TS2307: Cannot find module '@/assets/images/gallery-daniel-mv.jpg' or its corresponding type declarations.
+      # Error: src/templates/Gallery/Carousel/images.ts(4,24): error TS2307: Cannot find module '@/assets/images/gallery-setasu-last.jpg' or its corresponding type declarations.
+      # Error: src/templates/Gallery/Carousel/images.ts(5,17): error TS2307: Cannot find module '@/assets/images/gallery-sky.jpg' or its corresponding type declarations.
+      # Error: Process completed with exit code 2.

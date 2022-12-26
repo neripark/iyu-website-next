@@ -15,7 +15,6 @@ export const SiteHamburgerNavigation: React.FC = () => {
     >
       <p className={styles["wrap-img"]}>
         <AnchorLink
-          className={styles["anchor"]}
           href={`#${hooks.offsetList.mainVisual.id}`}
           offset={hooks.offsetList.mainVisual.offset}
         >
