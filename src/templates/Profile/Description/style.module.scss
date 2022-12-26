@@ -1,6 +1,12 @@
 @import "variables";
 @import "functions";
 
+@mixin selection-color() {
+  &::selection {
+    background-color: $yellow-rgba;
+    color: $black-rgba;
+  }
+}
 .profile-description {
   position: absolute;
   width: 100%;
@@ -41,8 +47,13 @@
   }
 }
 
+.name {
+  @include selection-color();
+}
+
 .part {
   margin-left: 0.2em;
+  @include selection-color();
 }
 
 .description {
