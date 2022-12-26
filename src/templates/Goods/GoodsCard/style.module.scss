@@ -9,6 +9,9 @@
   position: relative;
   background: $light-gray;
   padding-bottom: 100%; // タイルの大きさを常に正方形にするため
+  @include mq("ssm") {
+    padding-bottom: 0;
+  }
 }
 
 .image {
@@ -18,9 +21,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  @include mq() {
-    visibility: visible;
-    opacity: 1;
+  @include mq("ssm") {
+    position: static;
+    transform: none;
   }
 }
 
@@ -39,7 +42,7 @@
   transition: opacity 0.2s ease, visibility 0.2s;
   visibility: hidden;
   opacity: 0;
-  @include mq() {
+  @include mq("tb") {
     visibility: visible;
     opacity: 1;
     position: static;

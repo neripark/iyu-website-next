@@ -19,12 +19,13 @@
   margin: 10px auto 0;
   @include mq("tb") {
     gap: 30px;
+    grid-template-columns: 1fr 1fr;
   }
   @include mq() {
     gap: 15px;
-    grid-template-columns: 1fr 1fr;
   }
   @include mq("ssm") {
+    gap: 30px;
     grid-template-columns: none; // 初期値
   }
 }
