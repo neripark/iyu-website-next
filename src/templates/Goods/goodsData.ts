@@ -5,18 +5,18 @@ import goodsIyuT from "@/assets/images/goods-004-iyuT.png";
 
 export const goodsData = [
   {
-    key: "goods1stCd",
-    src: goods1stCd,
-    label: "世田谷スーサイド / 1st Single",
-    price: 500,
-    href: "https://store.iyumusic.tokyo/items/32800062",
-  },
-  {
     key: "goods2ndCd",
     src: goods2ndCd,
     label: "No wonder / 2nd Single",
     price: 500,
     href: "https://store.iyumusic.tokyo/items/40861674",
+  },
+  {
+    key: "goods1stCd",
+    src: goods1stCd,
+    label: "世田谷スーサイド / 1st Single",
+    price: 500,
+    href: "https://store.iyumusic.tokyo/items/32800062",
   },
   {
     key: "goodsIyuT",
