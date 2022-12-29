@@ -1,7 +1,7 @@
-import goods1stCd from "@/assets/images/goods-001-iyuCD-1st.png";
-import goods2ndCd from "@/assets/images/goods-002-iyuCD-2nd.png";
-import goodsSticker from "@/assets/images/goods-003-iyuSticker.png";
-import goodsIyuT from "@/assets/images/goods-004-iyuT.png";
+import goods1stCd from "@/assets/images/goods-001-iyuCD-1st.jpg";
+import goods2ndCd from "@/assets/images/goods-002-iyuCD-2nd.jpg";
+import goodsSticker from "@/assets/images/goods-003-iyuSticker.jpg";
+import goodsIyuT from "@/assets/images/goods-004-iyuT.jpg";
 
 export const goodsData = [
   {
