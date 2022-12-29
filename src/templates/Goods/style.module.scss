@@ -22,9 +22,6 @@
     grid-template-columns: 1fr 1fr;
   }
   @include mq() {
-    gap: 15px;
-  }
-  @include mq("ssm") {
     gap: 30px;
     grid-template-columns: none; // 初期値
   }
