@@ -2,3 +2,7 @@
 package.json
 package-lock.json
 out/
+
+# happy-css-modules
+src/**/*.module.scss.d.ts
+src/**/*.module.scss.d.ts.map
