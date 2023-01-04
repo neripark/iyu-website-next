@@ -21,7 +21,7 @@ export const MainVisual: React.FC = () => {
         className={styles["bg-movie"]}
         loop
         muted
-        src="/assets/videos/200109_iyu-webtop-video.mp4"
+        src="/assets/videos/221231_iyu-webtop-video-pc-1600bit.mp4"
       />
     </section>
   );
