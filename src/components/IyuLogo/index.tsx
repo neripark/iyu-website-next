@@ -6,8 +6,8 @@ interface Props extends React.SVGProps<SVGSVGElement> {
 }
 
 export const IyuLogo: React.FC<Props> = (props) => {
-  const color = props.colorType === "white" ? whiteColor : fullColor;
-  const { className, ...rest } = props;
+  const { className, colorType, ...rest } = props;
+  const color = colorType === "white" ? whiteColor : fullColor;
   return (
     <svg
       className={`${className} ${styles["root"]}`}
