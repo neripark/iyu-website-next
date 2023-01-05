@@ -14,7 +14,7 @@ export const IyuLogo: React.FC<Props> = (props) => {
       viewBox="0 0 960 540"
       {...rest}
     >
-      <title>iyu-logo-RGB</title>
+      <title>iyu</title>
       {/* i */}
       <rect
         fill={color.i}
