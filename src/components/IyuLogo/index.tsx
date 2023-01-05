@@ -1,12 +1,7 @@
-interface Props extends React.SVGAttributes<SVGAElement> {}
+interface Props extends React.SVGProps<SVGSVGElement> {}
 
 export const IyuLogo: React.FC<Props> = (props) => (
-  <svg
-    id="レイヤー_1"
-    data-name="レイヤー 1"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 960 540"
-  >
+  <svg viewBox="0 0 960 540" {...props}>
     <title>iyu-logo-RGB</title>
     <rect fill="#00aecb" x="77.78" y="172.89" width="127.74" height="233.48" />
     <polygon
