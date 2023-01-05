@@ -1,5 +1,5 @@
+import { IyuLogo } from "@/components/IyuLogo";
 import { CommonNavigation } from "@/containers/CommonNavigation";
-import Image from "next/image";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { CSSTransition } from "react-transition-group";
 import { useHooks } from "./hooks";
@@ -18,13 +18,7 @@ export const SiteHamburgerNavigation: React.FC = () => {
           href={`#${hooks.offsetList.mainVisual.id}`}
           offset={hooks.offsetList.mainVisual.offset}
         >
-          <Image
-            alt="iyu-logo"
-            className={styles["logo"]}
-            height={39}
-            src="/assets/images/iyu-logo-White.svg"
-            width={70}
-          />
+          <IyuLogo className={styles["logo"]} colorType="white" />
         </AnchorLink>
       </p>
       <button
