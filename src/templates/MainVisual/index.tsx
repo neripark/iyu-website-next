@@ -34,6 +34,7 @@ const Video: React.FC<{ src: string }> = (props) => (
     className={styles["bg-movie"]}
     loop
     muted
+    playsInline
     src={props.src}
   ></video>
 );
