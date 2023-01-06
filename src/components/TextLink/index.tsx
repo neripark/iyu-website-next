@@ -7,17 +7,20 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
 }
 
-export const TextLink: React.FC<Props> = (props) => (
-  <a {...props} className={`${styles["root"]} ${props.className}`}>
-    {props.children}
-  </a>
-);
+export const TextLink: React.FC<Props> = (props) => {
+  const { className = "", ...rest } = props;
+  return (
+    <a {...rest} className={`${styles["root"]} ${className}`}>
+      {props.children}
+    </a>
+  );
+};
 
 // アンカージャンプする場合
 export const TextAnchorLink: React.FC<
   ComponentPropsWithoutRef<typeof AnchorLink>
 > = (props) => {
-  const { children, className, ...rest } = props;
+  const { children, className = "", ...rest } = props;
   return (
     <AnchorLink {...rest} className={`${styles["root"]} ${className}`}>
       {children}
