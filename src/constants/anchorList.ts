@@ -32,6 +32,12 @@ export const anchorList: Record<SectionName, Offset> = {
     offsetPc: 60,
     offsetSp: 59,
   },
+  goods: {
+    id: "goods",
+    label: "Goods",
+    offsetPc: 60,
+    offsetSp: 59,
+  },
   gallery: {
     id: "gallery",
     label: "Gallery",

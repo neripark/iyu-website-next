@@ -1,0 +1,28 @@
+@import "variables";
+@import "functions";
+
+.root {
+  position: relative;
+  background-color: $light-yellow;
+  padding: 0 $side-padding-pc 60px;
+  @include mq() {
+    padding: 0 $side-padding-sp-product-view 40px;
+  }
+}
+
+.card-group {
+  background-color: $light-yellow;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 56px;
+  max-width: 1000px;
+  margin: 10px auto 0;
+  @include mq("tb") {
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mq() {
+    gap: 30px;
+    grid-template-columns: none; // 初期値
+  }
+}
