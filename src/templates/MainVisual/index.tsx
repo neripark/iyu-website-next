@@ -14,9 +14,9 @@ export const MainVisual: React.FC = () => {
       <InformationSummary />
       {/* 両方ダウンロードされるのを防ぐためJSで出し分け */}
       {hooks._isSp ? (
-        <Video src="/assets/videos/221231_iyu-webtop-video-sp-1500bit.mp4" />
+        <Video src="/assets/videos/230113_iyu-webtop-video-pc-3000bit.mp4" />
       ) : (
-        <Video src="/assets/videos/221231_iyu-webtop-video-pc-1600bit.mp4" />
+        <Video src="/assets/videos/230113_iyu-webtop-video-sp-1700bit.mp4" />
       )}
     </section>
   );
