@@ -3,5 +3,6 @@ export type SectionName =
   | "profile"
   | "musicVideo"
   | "live"
+  | "goods"
   | "gallery"
   | "contact";
