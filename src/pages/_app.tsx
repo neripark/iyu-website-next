@@ -7,6 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <AppHead />
+      {/* note: Next.js の使用で head 内に置けない */}
       <GoogleTagManager
         containerId={process.env.GOOGLE_TAG_MANAGER_CONTAINER_ID}
       />
