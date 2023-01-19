@@ -17,6 +17,8 @@ const nextConfig = {
     APP_ENV: process.env.APP_ENV, // NODE_ENV には `local` が存在しないので作成した。
     CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
+    GOOGLE_TAG_MANAGER_CONTAINER_ID:
+      process.env.GOOGLE_TAG_MANAGER_CONTAINER_ID,
   },
 };
 
