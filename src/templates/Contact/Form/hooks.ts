@@ -4,6 +4,7 @@ import {
   FormEvent,
   useCallback,
   useContext,
+  useMemo,
   useState,
 } from "react";
 import { UserInputContext } from "./UserInputProvider";
@@ -27,6 +28,12 @@ export const useHooks = () => {
     },
     [setUserInput]
   );
+
+  // todo: context 側に寄せる
+  const userMessageLength = useMemo(() => {
+    if (!userInput.message) return 0;
+    return userInput.message.length;
+  }, [userInput.message]);
 
   const onSubmit = useCallback(
     async (e: FormEvent) => {
@@ -52,5 +59,6 @@ export const useHooks = () => {
     onChange,
     onSubmit,
     isFormDisabled,
+    userMessageLength,
   };
 };
