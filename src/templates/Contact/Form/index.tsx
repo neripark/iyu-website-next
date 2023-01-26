@@ -12,6 +12,12 @@ export const Form: React.FC = () => (
   </UserInputProvider>
 );
 
+// note:
+// LINE notify の文字数制限が1000文字だが、長文を送信したい人も多そうなので多めの設定をしている。
+// 見切れたぶんはメールで見られるのでいったん今は許容する。
+// todo: サーバーサイドで分割送信をできるようにする。
+const MESSAGE_MAX_LENGTH = 1500;
+
 const FormParts: React.FC = () => {
   const hooks = useHooks();
   return (
@@ -36,11 +42,15 @@ const FormParts: React.FC = () => {
         type="email"
       />
       <Textarea
+        maxLength={MESSAGE_MAX_LENGTH}
         name="message"
         onChange={hooks.onChange}
         placeholder="内容"
         required
       />
+      <p className={styles["user-input-length"]}>
+        {hooks.userMessageLength} / {MESSAGE_MAX_LENGTH}
+      </p>
       <SubmitButton
         className={styles["send-button"]}
         disabled={hooks.isFormDisabled}
