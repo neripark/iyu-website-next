@@ -1,3 +1,4 @@
+import { type EntrySkeletonType } from "contentful";
 import { getEntries } from "@/lib/contentful";
 import { Live } from "@/types";
 import dayjs from "dayjs";
@@ -15,8 +16,8 @@ const repository = async () => {
   const now = new Date();
   // note: ライブが終わっても1週間は表示しておく
   const pastOneWeekFromNow = dayjs(now).add(1, "w").format("YYYY-MM-DD");
-  const livePosts = await getEntries<Live>({
-    content_type: "liveInfo",
+  const livePosts = await getEntries<EntrySkeletonType<Live>>({
+    content_type:  "liveInfo",
     "fields.date[gte]": pastOneWeekFromNow,
     order: "fields.date",
   }).catch((err) => {
