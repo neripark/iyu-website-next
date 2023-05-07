@@ -1,7 +1,7 @@
 import { IyuLogo } from "@/components/IyuLogo";
 import { anchorList } from "@/constants/anchorList";
-import { useHooks } from "./hooks";
 import { InformationSummary } from "./InformationSummary";
+import { useHooks } from "./hooks";
 import styles from "./style.module.scss";
 
 export const MainVisual: React.FC = () => {
