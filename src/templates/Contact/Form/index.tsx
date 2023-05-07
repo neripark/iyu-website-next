@@ -1,10 +1,10 @@
 import { Input } from "@/components/Input";
 import { Textarea } from "@/components/Textarea";
 import { CategorySelect } from "./CategorySelect";
-import { useHooks } from "./hooks";
-import styles from "./style.module.scss";
 import { SubmitButton } from "./SubmitButton";
 import { UserInputProvider } from "./UserInputProvider";
+import { useHooks } from "./hooks";
+import styles from "./style.module.scss";
 
 export const Form: React.FC = () => (
   <UserInputProvider>
