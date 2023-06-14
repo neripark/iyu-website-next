@@ -27,7 +27,7 @@
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
-    "@types/node": "^20.2.3",
+    "@types/node": "^20.3.0",
     "@types/nodemailer": "^6.4.7",
     "@types/react": "^18.2.11",
     "@types/react-anchor-link-smooth-scroll": "^1.0.2",
