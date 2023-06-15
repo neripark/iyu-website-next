@@ -5,7 +5,18 @@
   display: block;
   width: 100%;
   height: auto;
-  background: $gray;
+  background: linear-gradient(to right, $light-gray, $gray, $light-gray);
+  background-size: 200% 200%;
+  animation: gradient 1s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: top 0 left -200%;
+  }
 }
 
 // ____________ for splide ____________
