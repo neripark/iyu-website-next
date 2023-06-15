@@ -1,11 +1,12 @@
 @import "variables";
 @import "functions";
+@import "utils";
 
 .image {
   display: block;
   width: 100%;
   height: auto;
-  background: $gray;
+  @include loading-placeholder();
 }
 
 // ____________ for splide ____________
