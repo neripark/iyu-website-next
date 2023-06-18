@@ -19,7 +19,7 @@ export class MessageService {
   }
 
   public getMessageToUser() {
-    return toUser(this.getCommonMessage());
+    return toUser(this.getCommonMessage(), this.formItem.category);
   }
 
   public getMessageToIyuMember() {
@@ -54,12 +54,21 @@ ${commonMessage}
 
 // ______________________________
 //
-const toUser = (commonMessage: string) => {
+const toUser = (
+  commonMessage: string,
+  category: ContactFormItem["category"]
+) => {
+  const supplement =
+    category === "live"
+      ? `
+当日はお会いできるのを楽しみにしております！`
+      : `
+内容確認次第、メンバーからご返信いたします。
+数日経っても返信がない場合は、大変恐れ入りますが、Twitter DM にてご連絡をお願いいたします。`;
+
   return `この度はお問い合わせありがとうございます！
 以下の内容で承りました。
-
-内容確認次第、メンバーからご返信いたします。
-数日経っても返信がない場合は、大変恐れ入りますが、Twitter DM にてご連絡をお願いいたします。
+${supplement}
 
 --
 ${commonMessage}
