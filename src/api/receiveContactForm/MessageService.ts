@@ -27,18 +27,39 @@ export class MessageService {
   }
 
   private getCommonMessage() {
-    return `[お名前] ${this.formItem.name}
-[お問い合わせ種類] ${categories[this.formItem.category]}${
-      this.formItem.category === "live"
-        ? `
-[お取り置き日程] ${this.formItem.reservedate}
-[お取り置き枚数] ${this.formItem.reservecount}`
-        : ""
+    // note:
+    // 単純にテンプレートリテラル+dedentを用いると、特定条件下で行自体を削除する（空行を生まない）要件に対応できないため、
+    // 愚直な文字列連結を選択している。
+    // いい方法があったら改善する
+    const items: string[] = [];
+    items.push(`[お名前] ${this.formItem.name}`);
+    items.push(`[お問い合わせ種類] ${categories[this.formItem.category]}`);
+    if (this.formItem.category === "live") {
+      items.push(`[お取り置き日程] ${this.formItem.reservedate}`);
+      items.push(`[お取り置き枚数] ${this.formItem.reservecount}`);
     }
-[メールアドレス] ${this.formItem.email}
-[メッセージ]
-${this.formItem.message}
-`;
+    items.push(`[メールアドレス] ${this.formItem.email}`);
+    items.push(`[メッセージ]`);
+    items.push(`${this.formItem.message}`);
+
+    // cf) イミュータブルにするなら:
+    // const items: string[] = [
+    //   `[お名前] ${this.formItem.name}`,
+    //   `[お問い合わせ種類] ${categories[this.formItem.category]}`,
+    //   ...(() => {
+    //     return this.formItem.category === "live"
+    //       ? [
+    //           `[お取り置き日程] ${this.formItem.reservedate}`,
+    //           `[お取り置き枚数] ${this.formItem.reservecount}`,
+    //         ]
+    //       : [];
+    //   })(),
+    //   `[メールアドレス] ${this.formItem.email}`,
+    //   `[メッセージ]`,
+    //   `${this.formItem.message}`,
+    // ];
+
+    return items.join("\n");
   }
 }
 
