@@ -57,7 +57,29 @@ describe("MessageService のテスト", () => {
       );
     });
   });
-  xdescribe("カテゴリが other の場合", () => {});
+
+  describe("カテゴリが other の場合", () => {
+    const data: ContactFormItem = {
+      ...basicData,
+      category: "other",
+    };
+    const messageService = new MessageService(data);
+
+    test("emailを返却可能", () => {
+      expect(messageService.userEmail).toEqual("test@example.com");
+    });
+    test("ユーザーネームを返却可能", () => {
+      expect(messageService.userName).toEqual("テスト太郎");
+    });
+    test("メンバー向けメッセージが正しいこと", () => {
+      expect(messageService.getMessageToIyuMember()).toEqual(
+        messageToIyuMemberWhenOther
+      );
+    });
+    test("ユーザ向けメッセージが正しいこと", () => {
+      expect(messageService.getMessageToUser()).toEqual(messageToUserWhenOther);
+    });
+  });
 });
 
 // ____________________________________________________________________________________
@@ -113,6 +135,34 @@ const messageToUserWhenTogether = `この度はお問い合わせありがとう
 --
 [お名前] テスト太郎
 [お問い合わせ種類] 共演のお誘い
+[メールアドレス] test@example.com
+[メッセージ]
+こんにちは！
+
+`;
+
+// ____________________________________________________________________________________
+const messageToIyuMemberWhenOther = `webサイトからContactがありました！
+
+--
+[お名前] テスト太郎
+[お問い合わせ種類] その他
+[メールアドレス] test@example.com
+[メッセージ]
+こんにちは！
+
+`;
+
+// ____________________________________________________________________________________
+const messageToUserWhenOther = `この度はお問い合わせありがとうございます！
+以下の内容で承りました。
+
+内容確認次第、メンバーからご返信いたします。
+数日経っても返信がない場合は、大変恐れ入りますが、Twitter DM にてご連絡をお願いいたします。
+
+--
+[お名前] テスト太郎
+[お問い合わせ種類] その他
 [メールアドレス] test@example.com
 [メッセージ]
 こんにちは！
