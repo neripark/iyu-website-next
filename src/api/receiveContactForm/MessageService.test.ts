@@ -24,8 +24,23 @@ describe("MessageService のテスト", () => {
       expect(messageService.userName).toEqual("テスト太郎");
     });
     test("メンバー向けメッセージが正しいこと", () => {
-      expect(messageService.getMessageToIyuMember())
-        .toEqual(`webサイトからContactがありました！
+      expect(messageService.getMessageToIyuMember()).toEqual(
+        messageToIyuMemberWhenLive
+      );
+    });
+    test("ユーザ向けメッセージが正しいこと", () => {
+      expect(messageService.getMessageToUser())
+        .toEqual(messageToUserWhenLive);
+    });
+  });
+
+  xdescribe("カテゴリが together の場合", () => {});
+  xdescribe("カテゴリが other の場合", () => {});
+});
+
+
+// ____________________________________________________________________________________
+const messageToIyuMemberWhenLive = `webサイトからContactがありました！
 
 --
 [お名前] テスト太郎
@@ -36,11 +51,10 @@ describe("MessageService のテスト", () => {
 [メッセージ]
 こんにちは！
 
-`);
-    });
-    test("ユーザ向けメッセージが正しいこと", () => {
-      expect(messageService.getMessageToUser())
-        .toEqual(`この度はお問い合わせありがとうございます！
+`;
+
+// ____________________________________________________________________________________
+const messageToUserWhenLive = `この度はお問い合わせありがとうございます！
 以下の内容で承りました。
 
 当日はお会いできるのを楽しみにしております！
@@ -54,10 +68,4 @@ describe("MessageService のテスト", () => {
 [メッセージ]
 こんにちは！
 
-`);
-    });
-  });
-
-  xdescribe("カテゴリが together の場合", () => {});
-  xdescribe("カテゴリが other の場合", () => {});
-});
+`;
