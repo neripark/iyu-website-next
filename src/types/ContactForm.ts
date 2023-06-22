@@ -12,13 +12,13 @@ interface Basic {
   message: string;
 }
 
-interface SelectedLive extends Basic {
+export interface SelectedLive extends Basic {
   category: "live";
   reservedate: string;
   reservecount: string;
 }
 
-interface UnSelectedLive extends Basic {
+export interface UnSelectedLive extends Basic {
   category: "together" | "other";
   reservedate?: never;
   reservecount?: never;
