@@ -1,4 +1,4 @@
-import { categories, SelectedLive } from "@/types/ContactForm";
+import { SelectedLive } from "@/types/ContactForm";
 import { dedent } from "ts-dedent";
 import { Message } from "./AbstractMessage";
 
@@ -11,9 +11,10 @@ export class MessageLive extends Message {
   }
 
   private messagePreservedUserInputs() {
+    // if文がないならdedent 使ってもいいかも
     const items: string[] = [];
     items.push(`[お名前] ${this.formItem.name}`);
-    items.push(`[お問い合わせ種類] ${categories[this.formItem.category]}`);
+    items.push(`[お問い合わせ種類] ${this.categoryLabel}`);
     items.push(`[お取り置き日程] ${this.formItem.reservedate}`);
     items.push(`[お取り置き枚数] ${this.formItem.reservecount}`);
     items.push(`[メールアドレス] ${this.formItem.email}`);
