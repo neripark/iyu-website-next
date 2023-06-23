@@ -11,16 +11,15 @@ export class MessageLive extends Message {
   }
 
   private messagePreservedUserInputs() {
-    // if文がないならdedent 使ってもいいかも
-    const items: string[] = [];
-    items.push(`[お名前] ${this.formItem.name}`);
-    items.push(`[お問い合わせ種類] ${this.categoryLabel}`);
-    items.push(`[お取り置き日程] ${this.formItem.reservedate}`);
-    items.push(`[お取り置き枚数] ${this.formItem.reservecount}`);
-    items.push(`[メールアドレス] ${this.formItem.email}`);
-    items.push(`[メッセージ]`);
-    items.push(`${this.formItem.message}`);
-    return items.join("\n");
+    return dedent`
+      [お名前] ${this.formItem.name}
+      [お問い合わせ種類] ${this.categoryLabel}
+      [お取り置き日程] ${this.formItem.reservedate}
+      [お取り置き枚数] ${this.formItem.reservecount}
+      [メールアドレス] ${this.formItem.email}
+      [メッセージ]
+      ${this.formItem.message}
+    `;
   }
 
   public messageToUserByEmail() {

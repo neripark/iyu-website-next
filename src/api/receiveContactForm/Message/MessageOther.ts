@@ -11,13 +11,13 @@ export class MessageOther extends Message {
   }
 
   private messagePreservedUserInputs() {
-    const items: string[] = [];
-    items.push(`[お名前] ${this.formItem.name}`);
-    items.push(`[お問い合わせ種類] ${this.categoryLabel}`);
-    items.push(`[メールアドレス] ${this.formItem.email}`);
-    items.push(`[メッセージ]`);
-    items.push(`${this.formItem.message}`);
-    return items.join("\n");
+    return dedent`
+      [お名前] ${this.formItem.name}
+      [お問い合わせ種類] ${this.categoryLabel}
+      [メールアドレス] ${this.formItem.email}
+      [メッセージ]
+      ${this.formItem.message}
+    `;
   }
 
   public messageToUserByEmail() {
