@@ -31,6 +31,7 @@ export class MessageLive extends Message {
 
       --
       ${this.messagePreservedUserInputs()}
+
     `;
   }
 
@@ -40,6 +41,7 @@ export class MessageLive extends Message {
 
       --
       ${this.messagePreservedUserInputs()}
+
     `;
   }
 

@@ -30,6 +30,7 @@ export class MessageOther extends Message {
 
       --
       ${this.messagePreservedUserInputs()}
+
     `;
   }
 
@@ -39,6 +40,7 @@ export class MessageOther extends Message {
 
       --
       ${this.messagePreservedUserInputs()}
+
     `;
   }
 

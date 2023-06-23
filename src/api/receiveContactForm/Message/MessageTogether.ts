@@ -30,6 +30,7 @@ export class MessageTogether extends Message {
 
       --
       ${this.messagePreservedUserInputs()}
+
     `;
   }
 
@@ -39,6 +40,7 @@ export class MessageTogether extends Message {
 
       --
       ${this.messagePreservedUserInputs()}
+
     `;
   }
 
