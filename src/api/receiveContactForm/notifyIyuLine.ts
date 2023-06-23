@@ -1,8 +1,6 @@
 import { notifyToLine } from "@/repositories/line";
-import { MessageService } from "./MessageService";
 
-export const notifyIyuLine = async (service: MessageService) => {
-  const message = service.getMessageToIyuMember();
+export const notifyIyuLine = async (message: string) => {
   return notifyToLine(message)
     .then((res) => {
       console.log(`LINEへの通知が完了しました: ${res}`);

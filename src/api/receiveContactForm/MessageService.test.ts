@@ -1,5 +1,5 @@
 import { ContactFormItem } from "@/types/ContactForm";
-import { MessageService } from "./MessageService";
+import { MessageService } from "./getMessageServiceInstance";
 
 const basicData = {
   name: "テスト太郎",
