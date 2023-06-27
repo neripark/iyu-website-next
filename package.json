@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
-    "contentful": "^10.1.6",
+    "contentful": "^10.3.0",
     "dayjs": "^1.11.8",
     "next": "^13.4.5",
     "nodemailer": "^6.9.3",
