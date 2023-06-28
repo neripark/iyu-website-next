@@ -1,10 +1,10 @@
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./style.module.scss";
 
 export const TwitterLink: React.FC = () => (
   <div className={styles["twitter"]}>
     <a className={styles["link"]} href="https://twitter.com/iyu_band">
-      <Image
+      <img
         alt="iyu twitter"
         className={styles["icon"]}
         height={54}

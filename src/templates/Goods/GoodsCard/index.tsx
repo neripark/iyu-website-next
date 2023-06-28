@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { ComponentProps } from "react";
+// import Image from "next/image";
 import styles from "./style.module.scss";
 
 interface Props {
   className?: string;
-  src: ComponentProps<typeof Image>["src"];
+  // src: ComponentProps<typeof Image>["src"];
+  src: string;
   href: string;
   label: string;
   price: number;
@@ -20,13 +20,13 @@ export const GoodsCard: React.FC<Props> = (props) => {
         target="_black"
       >
         <div className={styles["image-wrapper"]}>
-          <Image
+          <img
             alt={props.label}
             className={styles["image"]}
             sizes="(max-width: 600px) 100%,
                     (max-width: 700px) 100vw - 60px,
                     640px" // todo: あとで値を確認する
-            src={props.src}
+            // src={props.src}
           />
         </div>
         <div className={styles["overlay"]}>
