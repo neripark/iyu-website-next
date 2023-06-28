@@ -1,16 +1,25 @@
 import type { Preview } from "@storybook/react";
 // import * as NextImage from "next/image";
 import * as Image from "next/image";
+// note:
+// React を import しないとJSXのところで `'React' は UMD グローバルを参照していますが、...` エラーが出る。
+// todo: React を import しなくても済む方法を探す。
+import * as React from "react";
 
+// note: next/image に width と height を要求される。なぜアプリケーション側では怒られないの？？
 // const OriginalNextImage = NextImage.default;
-
 // Object.defineProperty(NextImage, 'default', {
 //   configurable: true,
 //   // @ts-ignore
 //   value: (props: any) => <OriginalNextImage {...props} unoptimized />,
 // });
 
-Object.defineProperty(Image, "default", {
+interface Config {
+  configurable: boolean;
+  value: React.FC;
+}
+
+const config: Config = {
   configurable: true,
   value: (props: any) => {
     const { width, height } = props;
@@ -36,7 +45,9 @@ Object.defineProperty(Image, "default", {
       </div>
     );
   },
-});
+};
+
+Object.defineProperty(Image, "default", config);
 
 const preview: Preview = {
   parameters: {
