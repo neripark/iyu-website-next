@@ -1,6 +1,6 @@
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
-// import Image from "next/image";
+import Image from "next/image";
 import { images } from "./images";
 import styles from "./style.module.scss";
 
@@ -41,14 +41,14 @@ export const Carousel: React.FC<Props> = (props) => (
     <SplideTrack>
       {images.map((element) => (
         <SplideSlide key={element.key}>
-          <img
+          <Image
             alt={element.alt}
             className={styles["image"]}
             loading="lazy"
             sizes="(max-width: 600px) 100vw - 30px,
                    (max-width: 700px) 100vw - 60px,
                    640px"
-            // src={element.src}
+            src={element.src}
           />
         </SplideSlide>
       ))}
@@ -58,7 +58,7 @@ export const Carousel: React.FC<Props> = (props) => (
       <button
         className={`splide__arrow ${styles["custom__arrow"]} splide__arrow--prev ${styles["custom__arrow--prev"]}`}
       >
-        <img
+        <Image
           alt="to Previous Slide"
           className={styles["arrow-image"]}
           height="30"
@@ -69,7 +69,7 @@ export const Carousel: React.FC<Props> = (props) => (
       <button
         className={`splide__arrow ${styles["custom__arrow"]} splide__arrow--next ${styles["custom__arrow--next"]}`}
       >
-        <img
+        <Image
           alt="to Next Slide"
           className={styles["arrow-image"]}
           height="30"

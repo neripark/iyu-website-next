@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 import styles from "./style.module.scss";
 
 export const InstagramLink: React.FC = () => (
@@ -7,7 +7,7 @@ export const InstagramLink: React.FC = () => (
       className={styles["link"]}
       href="https://www.instagram.com/iyu_musictokyo/"
     >
-      <img
+      <Image
         alt="iyu instagram account"
         className={styles["icon"]}
         height={30}
