@@ -1,17 +1,10 @@
+import { LabeledLive } from "@/types";
 import styles from "./style.module.scss";
 
-interface Props {
-  date: string;
-  title: string;
-  place: string;
-  timeOpen: string;
-  timeStart: string;
-  timeIyu?: string;
-  ticket: string;
-  with: string[];
-}
+interface Props extends LabeledLive {}
 
 export const LiveCard: React.FC<Props> = (props) => (
+  // todo: 各項目が undefined の場合の表示を実装する
   <li className={styles["live-card"]}>
     <div className={styles["date"]}>
       <p className={styles["ymd"]}>{props.date}</p>
