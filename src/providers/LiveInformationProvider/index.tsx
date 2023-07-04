@@ -1,7 +1,7 @@
-import { Live } from "@/types";
+import { LabeledLive, Live } from "@/types";
 import dayjs from "dayjs";
 import "dayjs/locale/ja";
-import { createContext, ReactNode, useMemo } from "react";
+import { ReactNode, createContext, useMemo } from "react";
 
 /**
  * note: ライブ情報は一度しか取得しない、かつUI側から更新しないこと、扱う値が少なくて単純なことから、
@@ -12,13 +12,10 @@ import { createContext, ReactNode, useMemo } from "react";
 dayjs.locale("ja");
 
 type Lives = Live[];
-interface LabeledLive extends Omit<Live, "date"> {
-  date: string;
-}
-type LabeledLives = LabeledLive[];
 
+// todo: 生データと加工後データの区別をわかりやすくする
 type State = {
-  lives: LabeledLives;
+  lives: LabeledLive[];
 };
 
 const generateLabeledLives = (state: Lives) => {

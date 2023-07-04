@@ -8,3 +8,7 @@ export type Live = {
   ticket: string;
   with: string[];
 };
+
+export interface LabeledLive extends Omit<Live, "date"> {
+  date: string;
+}
