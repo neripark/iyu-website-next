@@ -10,6 +10,7 @@ const config: Config = {
     "^@/(.+)": "<rootDir>/src/$1",
   },
   testEnvironment: "jest-environment-jsdom",
+  setupFilesAfterEnv: ["./jest.setup.ts"],
 };
 
 export default createJestConfig(config);
