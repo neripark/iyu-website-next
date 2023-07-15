@@ -15,7 +15,7 @@ export const getLiveInfo = async (): Promise<Live[]> => {
 const repository = async () => {
   const now = new Date();
   // note: ライブが終わっても1週間は表示しておく
-  const pastOneWeekFromNow = dayjs(now).add(1, "w").format("YYYY-MM-DD");
+  const pastOneWeekFromNow = dayjs(now).add(-1, "w").format("YYYY-MM-DD");
   const livePosts = await getEntries<EntrySkeletonType<Live>>({
     content_type: "liveInfo",
     "fields.date[gte]": pastOneWeekFromNow,
