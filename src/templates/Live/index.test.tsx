@@ -7,7 +7,7 @@ const renderLiveComponent = (data: TypeLive[]) => {
   render(
     <LiveInformationProvider lives={data}>
       <Live />
-    </LiveInformationProvider>
+    </LiveInformationProvider>,
   );
 };
 
@@ -37,7 +37,7 @@ describe("Live コンポーネントのテスト", () => {
     });
     test("サイト内フォームまでのアンカーリンクが表示されていること", () => {
       expect(
-        screen.getByRole("link", { name: "こちらのフォーム" })
+        screen.getByRole("link", { name: "こちらのフォーム" }),
       ).toHaveAttribute("href", "#contact");
     });
     test("Twitter DM でもお取り置きができる旨を伝えるテキストが表示されていること", () => {
@@ -46,7 +46,7 @@ describe("Live コンポーネントのテスト", () => {
     test("iyu Twitter アカウントへのリンクが表示されていること", () => {
       expect(screen.getByRole("link", { name: "Twitter" })).toHaveAttribute(
         "href",
-        "https://twitter.com/iyu_band"
+        "https://twitter.com/iyu_band",
       );
     });
   });
@@ -68,7 +68,7 @@ describe("Live コンポーネントのテスト", () => {
     test("iyu Twitter アカウントへのリンクが表示されていること", () => {
       expect(screen.getByRole("link", { name: "Twitter" })).toHaveAttribute(
         "href",
-        "https://twitter.com/iyu_band"
+        "https://twitter.com/iyu_band",
       );
     });
   });

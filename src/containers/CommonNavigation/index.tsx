@@ -21,7 +21,7 @@ export const CommonNavigation = forwardRef<HTMLUListElement, Props>(
         })}
       </ul>
     );
-  }
+  },
 );
 
 const Item: React.FC<{

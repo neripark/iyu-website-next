@@ -9,7 +9,7 @@ export const useHooks = () => {
     setIsScrollStarted(window.pageYOffset > 0);
     setIsScrolledOver1vh(
       ref.current !== null &&
-        window.pageYOffset > window.innerHeight - ref.current.clientHeight
+        window.pageYOffset > window.innerHeight - ref.current.clientHeight,
     );
   }, []);
 

@@ -22,7 +22,7 @@ const repository = async () => {
     order: "fields.date",
   }).catch((err) => {
     throw new Error(
-      `Error: contentful からLive情報を取得できませんでした。${err}`
+      `Error: contentful からLive情報を取得できませんでした。${err}`,
     );
   });
   return livePosts.items.map((element) => element.fields);
