@@ -17,7 +17,9 @@ export const useHooks = () => {
   // https://github.com/neripark/iyu-website-next/issues/47
   const onChange = useCallback(
     (
-      e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+      e: ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >,
     ) => {
       setUserInput((prev) => {
         return {
@@ -26,7 +28,7 @@ export const useHooks = () => {
         };
       });
     },
-    [setUserInput]
+    [setUserInput],
   );
 
   // todo: context 側に寄せる
@@ -45,14 +47,14 @@ export const useHooks = () => {
       } catch (err) {
         alert(
           "申し訳ありません！エラーが発生しました。\r\nお手数ですが、メール（iyumusictokyo@gmail.com）かTwitterでお問い合わせください。\r\n\r\n" +
-            err
+            err,
         );
         return;
       }
       alert("ご連絡ありがとうございます！返信をお待ち下さい。");
       setIsFormDisabled(false);
     },
-    [userInput]
+    [userInput],
   );
 
   return {

@@ -15,7 +15,7 @@ type AppApiResponse = {
 
 const handler = async (
   req: NextApiRequestWithAppParams,
-  res: NextApiResponse<AppApiResponse>
+  res: NextApiResponse<AppApiResponse>,
 ) => {
   console.log("req.body: ", req.body);
   const result = await receiveContactForm(req, res);

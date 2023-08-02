@@ -27,8 +27,8 @@ describe("LiveCard コンポーネントのテスト", () => {
     expect(screen.getByText("※iyuの出演は21:00頃の予定です。")).toBeVisible();
     expect(
       screen.getByText(
-        "w) ダミーバンド / ダミーアーティスト / ダミーインストバンド / ダミージャズバンド"
-      )
+        "w) ダミーバンド / ダミーアーティスト / ダミーインストバンド / ダミージャズバンド",
+      ),
     ).toBeVisible();
   });
   test("iyuの出演時間が未設定の場合、項目自体が表示されないこと", () => {
@@ -38,7 +38,7 @@ describe("LiveCard コンポーネントのテスト", () => {
     };
     render(<LiveCard {...data} />);
     expect(
-      screen.queryByText("※iyuの出演は21:00頃の予定です。")
+      screen.queryByText("※iyuの出演は21:00頃の予定です。"),
     ).not.toBeInTheDocument();
   });
   test("出演時間が未定の場合、未定と表示されること", () => {

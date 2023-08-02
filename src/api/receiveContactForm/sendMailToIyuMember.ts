@@ -2,7 +2,7 @@ import { sendMailByGmail } from "@/repositories/gmail";
 
 export const sendMailToIyuMember = async (
   message: string,
-  userName: string
+  userName: string,
 ) => {
   return sendMailByGmail({
     to: process.env.MAIL_TO_IYU_MEMBER || "",

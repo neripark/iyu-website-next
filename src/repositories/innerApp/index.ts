@@ -3,7 +3,7 @@ import { ContactFormItem } from "@/types/ContactForm";
 const URL = "/api/receiveContactForm"; // Next.js api
 
 export const postContactForm = (
-  contactFormItem: Partial<ContactFormItem>
+  contactFormItem: Partial<ContactFormItem>,
 ): Promise<Response> => {
   return fetch(URL, {
     method: "POST",
@@ -23,7 +23,7 @@ const encode = (contactFormItem: Partial<ContactFormItem>) => {
   return (Object.keys(data) as (keyof ContactFormItem)[])
     .map(
       (key) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(data[key] || "")}`
+        `${encodeURIComponent(key)}=${encodeURIComponent(data[key] || "")}`,
     )
     .join("&");
 };
