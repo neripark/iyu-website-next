@@ -1,11 +1,11 @@
-import { notifyToLine } from "@/repositories/line";
+import { ContactFormItem } from "@/types/ContactForm";
 
-export const varidate = async (message: string) => {
-  return notifyToLine(message)
-    .then((res) => {
-      console.log(`LINEへの通知が完了しました: ${res}`);
-    })
-    .catch((err) => {
-      console.error(`LINEへの通知でエラーが発生しました: ${err}`);
-    });
+export const validate = (body: ContactFormItem) => {
+  switch (body.category) {
+    case "live":
+    case "together":
+    case "other":
+    default:
+      throw new Error("定義外のクラスが渡されました。");
+  }
 };
