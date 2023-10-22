@@ -7,7 +7,10 @@ interface NextApiRequestWithAppParams extends NextApiRequest {
   body: ContactFormItem;
 }
 
-export type Result = { code: 200 | 400; message: string };
+export type Result = {
+  code: 200 | 400;
+  message: string;
+};
 
 type AppApiResponse = {
   result: Result;
