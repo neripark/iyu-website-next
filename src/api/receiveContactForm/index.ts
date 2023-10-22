@@ -30,6 +30,6 @@ export const receiveContactForm = async (...props: Props): Promise<Result> => {
     return result;
   } catch (error) {
     // TODO: エラーの型を定義する
-    return { code: 400, message: "error" };
+    return { code: 400, message: `${error}` };
   }
 };
