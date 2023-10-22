@@ -14,6 +14,20 @@ const validDataLive: SelectedLive = {
   reservecount: "1枚",
 };
 
+const validDataTogether: UnSelectedLive = {
+  category: "together",
+  name: "neripark",
+  email: "aaa@example.com",
+  message: "こんにちは！",
+};
+
+const validDataOther: UnSelectedLive = {
+  category: "other",
+  name: "neripark",
+  email: "aaa@example.com",
+  message: "こんにちは！",
+};
+
 describe("validate", () => {
   describe("カテゴリがLiveの場合", () => {
     describe("validなデータ", () => {
@@ -92,6 +106,60 @@ describe("validate", () => {
           email: validDataLive.email,
           message: validDataLive.message,
           reservedate: validDataLive.reservedate,
+        };
+        expect(() => validate(data as any)).toThrowError();
+      });
+    });
+  });
+
+  describe("カテゴリがTogetherの場合", () => {
+    describe("validなデータ", () => {
+      test("パスすること", () => {
+        const data: ContactFormItem = validDataTogether;
+        expect(validate(data)).toEqual(data);
+      });
+      // Note: 共通パターンは省略
+    });
+    describe("invalidなデータ", () => {
+      // Note: 共通パターンは省略
+      test("reservedateが存在している場合、例外が投げられること", () => {
+        const data = {
+          ...validDataTogether,
+          reservedate: "hoge",
+        };
+        expect(() => validate(data as any)).toThrowError();
+      });
+      test("reservecountが存在している場合、例外が投げられること", () => {
+        const data = {
+          ...validDataTogether,
+          reservecount: "1枚",
+        };
+        expect(() => validate(data as any)).toThrowError();
+      });
+    });
+  });
+
+  describe("カテゴリがOtherの場合", () => {
+    describe("validなデータ", () => {
+      test("パスすること", () => {
+        const data: ContactFormItem = validDataOther;
+        expect(validate(data)).toEqual(data);
+      });
+      // Note: 共通パターンは省略
+    });
+    describe("invalidなデータ", () => {
+      // Note: 共通パターンは省略
+      test("reservedateが存在している場合、例外が投げられること", () => {
+        const data = {
+          ...validDataOther,
+          reservedate: "hoge",
+        };
+        expect(() => validate(data as any)).toThrowError();
+      });
+      test("reservecountが存在している場合、例外が投げられること", () => {
+        const data = {
+          ...validDataOther,
+          reservecount: "1枚",
         };
         expect(() => validate(data as any)).toThrowError();
       });
