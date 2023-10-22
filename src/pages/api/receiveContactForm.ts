@@ -7,7 +7,7 @@ interface NextApiRequestWithAppParams extends NextApiRequest {
   body: ContactFormItem;
 }
 
-export type Result = "ok" | "error";
+export type Result = { code: 200 | 400; message: string };
 
 type AppApiResponse = {
   result: Result;
@@ -19,7 +19,7 @@ const handler = async (
 ) => {
   console.log("req.body: ", req.body);
   const result = await receiveContactForm(req, res);
-  res.status(200).json({ result });
+  res.status(result.code).json({ result });
 };
 
 export default handler;

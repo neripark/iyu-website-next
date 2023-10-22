@@ -6,21 +6,27 @@ import { sendMailToUser } from "./sendMailToUser";
 
 type Props = Parameters<typeof handler>;
 
-export const receiveContactForm = async (...props: Props) => {
-  const [req] = props;
-  const service = getMessageServiceInstance(req.body);
+export const receiveContactForm = async (...props: Props): Promise<Result> => {
+  try {
+    const [req] = props;
+    const service = getMessageServiceInstance(req.body);
 
-  const result: Result = await Promise.all([
-    notifyIyuLine(service.messageToIyuMemberByLine()),
-    sendMailToIyuMember(service.messageToIyuMemberByEmail(), service.userName),
-    sendMailToUser(service.messageToUserByEmail(), service.userEmail),
-  ])
-    .then(() => {
-      return "ok" as Result;
-    })
-    .catch(() => {
-      return "error";
-    });
-
-  return result;
+    const result: Result = await Promise.all([
+      notifyIyuLine(service.messageToIyuMemberByLine()),
+      sendMailToIyuMember(
+        service.messageToIyuMemberByEmail(),
+        service.userName,
+      ),
+      sendMailToUser(service.messageToUserByEmail(), service.userEmail),
+    ])
+      .then(() => {
+        return { code: 200, message: "ok" } as Result;
+      })
+      .catch(() => {
+        return { code: 400, message: "error" };
+      });
+    return result;
+  } catch (error) {
+    return { code: 400, message: "error" };
+  }
 };
