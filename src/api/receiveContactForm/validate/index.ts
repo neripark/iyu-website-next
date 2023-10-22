@@ -6,29 +6,29 @@ const commonStringSchema = z.string().trim().min(1, "1文字以上必要です�
 
 const Live = z.object({
   category: z.literal("live"),
-  name: commonEmailSchema,
-  email: commonStringSchema,
+  name: commonStringSchema,
+  email: commonEmailSchema,
   message: commonStringSchema,
   reservedate: z.string(),
-  reservecount: z.string(),
+  reservecount: z.string()
 });
 
 const Together = z.object({
   category: z.literal("together"),
-  name: commonEmailSchema,
-  email: commonStringSchema,
+  name: commonStringSchema,
+  email: commonEmailSchema,
   message: commonStringSchema,
   reservedate: z.undefined(),
-  reservecount: z.undefined(),
+  reservecount: z.undefined()
 });
 
 const Other = z.object({
   category: z.literal("other"),
-  name: commonEmailSchema,
-  email: commonStringSchema,
+  name: commonStringSchema,
+  email: commonEmailSchema,
   message: commonStringSchema,
   reservedate: z.undefined(),
-  reservecount: z.undefined(),
+  reservecount: z.undefined()
 });
 
 export const validate = (body: ContactFormItem) => {
