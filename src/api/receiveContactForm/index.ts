@@ -10,8 +10,8 @@ type Props = Parameters<typeof handler>;
 export const receiveContactForm = async (...props: Props): Promise<Result> => {
   try {
     const [req] = props;
-    validate(req.body);
-    const service = getMessageServiceInstance(req.body);
+    const body = validate(req.body);
+    const service = getMessageServiceInstance(body);
 
     const result: Result = await Promise.all([
       notifyIyuLine(service.messageToIyuMemberByLine()),
