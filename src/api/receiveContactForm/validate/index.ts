@@ -3,14 +3,15 @@ import { z } from "zod";
 
 const commonEmailSchema = z.string().email("メールアドレスの形式が不正です。");
 const commonStringSchema = z.string().trim().min(1, "1文字以上必要です。");
+const commonReverveSchema = z.string().trim().min(1, "1文字以上必要です。");
 
 const Live = z.object({
   category: z.literal("live"),
   name: commonStringSchema,
   email: commonEmailSchema,
   message: commonStringSchema,
-  reservedate: z.string(),
-  reservecount: z.string()
+  reservedate: commonReverveSchema,
+  reservecount: commonReverveSchema,
 });
 
 const Together = z.object({
@@ -19,7 +20,7 @@ const Together = z.object({
   email: commonEmailSchema,
   message: commonStringSchema,
   reservedate: z.undefined(),
-  reservecount: z.undefined()
+  reservecount: z.undefined(),
 });
 
 const Other = z.object({
@@ -28,7 +29,7 @@ const Other = z.object({
   email: commonEmailSchema,
   message: commonStringSchema,
   reservedate: z.undefined(),
-  reservecount: z.undefined()
+  reservecount: z.undefined(),
 });
 
 export const validate = (body: ContactFormItem) => {
