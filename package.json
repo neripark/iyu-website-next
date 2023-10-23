@@ -38,7 +38,7 @@
     "@types/react": "^18.2.17",
     "@types/react-anchor-link-smooth-scroll": "^1.0.2",
     "@types/react-dom": "^18.2.7",
-    "@types/react-transition-group": "^4.4.6",
+    "@types/react-transition-group": "^4.4.8",
     "eslint": "^8.48.0",
     "eslint-config-next": "^13.4.12",
     "happy-css-modules": "^2.1.2",
