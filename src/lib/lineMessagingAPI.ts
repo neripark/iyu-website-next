@@ -15,11 +15,6 @@ const initialize = () => {
   const channelAccessToken =
     process.env.LINE_MESSAGING_API_CHANNEL_ACCESS_TOKEN;
 
-  // todo: 型定義で undefined を排除する
-  if (!channelAccessToken) {
-    throw new Error("LINE_MESSAGING_API_CHANNEL_ACCESS_TOKEN is not set");
-  }
-
   const config = { channelAccessToken };
   const nativeClient: Client = new messagingApi.MessagingApiClient(config);
 
