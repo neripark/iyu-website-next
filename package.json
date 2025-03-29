@@ -17,6 +17,7 @@
     "postinstall": "npm run hcm"
   },
   "dependencies": {
+    "@line/bot-sdk": "^9.7.3",
     "@splidejs/react-splide": "^0.7.12",
     "contentful": "^10.13.1",
     "dayjs": "^1.11.12",
