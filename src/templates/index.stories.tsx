@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Template } from './index';
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import { Template } from "./index";
 
 const meta: Meta<typeof Template> = {
-  title: 'Templates/Template',
+  title: "Templates/Template",
   component: Template,
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 };
 
 export default meta;
