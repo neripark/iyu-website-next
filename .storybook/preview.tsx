@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/nextjs";
+import { Meta } from "../src/components/Meta";
 import "../src/styles/base.css";
 
 const preview: Preview = {
@@ -10,6 +11,14 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <>
+        <Meta />
+        <Story />
+      </>
+    ),
+  ],
 };
 
 export default preview;
