@@ -38,3 +38,6 @@ next-env.d.ts
 # happy-css-modules
 src/**/*.module.scss.d.ts
 src/**/*.module.scss.d.ts.map
+
+# Claude Code
+.claude
