@@ -42,7 +42,7 @@ describe("MessageTogether クラスのテスト", () => {
     test("インスタンス化すると例外をスローすること", () => {
       expect(() => {
         new MessageTogether(data);
-      }).toThrowError();
+      }).toThrow();
     });
   });
 });

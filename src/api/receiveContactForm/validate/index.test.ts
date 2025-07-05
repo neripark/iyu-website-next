@@ -50,21 +50,21 @@ describe("validate", () => {
           ...validDataLive,
           name: "",
         };
-        expect(() => validate(data)).toThrowError("1文字以上必要です。");
+        expect(() => validate(data)).toThrow("1文字以上必要です。");
       });
       test("名前がスペースのみで入力されている場合、例外が投げられること", () => {
         const data: ContactFormItem = {
           ...validDataLive,
           name: " ",
         };
-        expect(() => validate(data)).toThrowError("1文字以上必要です。");
+        expect(() => validate(data)).toThrow("1文字以上必要です。");
       });
       test("emailが不正な形式の場合、例外が投げられること", () => {
         const data: ContactFormItem = {
           ...validDataLive,
           email: "aaa",
         };
-        expect(() => validate(data)).toThrowError(
+        expect(() => validate(data)).toThrow(
           "メールアドレスの形式が不正です。",
         );
       });
@@ -73,21 +73,21 @@ describe("validate", () => {
           ...validDataLive,
           message: "",
         };
-        expect(() => validate(data)).toThrowError("1文字以上必要です。");
+        expect(() => validate(data)).toThrow("1文字以上必要です。");
       });
       test("reservedateが空の場合、例外が投げられること", () => {
         const data: ContactFormItem = {
           ...validDataLive,
           reservedate: "",
         };
-        expect(() => validate(data)).toThrowError("1文字以上必要です。");
+        expect(() => validate(data)).toThrow("1文字以上必要です。");
       });
       test("reservecountが空の場合、例外が投げられること", () => {
         const data: ContactFormItem = {
           ...validDataLive,
           reservecount: "",
         };
-        expect(() => validate(data)).toThrowError("1文字以上必要です。");
+        expect(() => validate(data)).toThrow("1文字以上必要です。");
       });
       test("reservedateのフィールドが存在していない場合、例外が投げられること", () => {
         const data = {
@@ -97,7 +97,7 @@ describe("validate", () => {
           message: validDataLive.message,
           reservecount: validDataLive.reservecount,
         };
-        expect(() => validate(data as any)).toThrowError();
+        expect(() => validate(data as any)).toThrow();
       });
       test("reservecountのフィールドが存在していない場合、例外が投げられること", () => {
         const data = {
@@ -107,7 +107,7 @@ describe("validate", () => {
           message: validDataLive.message,
           reservedate: validDataLive.reservedate,
         };
-        expect(() => validate(data as any)).toThrowError();
+        expect(() => validate(data as any)).toThrow();
       });
     });
   });
@@ -127,14 +127,14 @@ describe("validate", () => {
           ...validDataTogether,
           reservedate: "hoge",
         };
-        expect(() => validate(data as any)).toThrowError();
+        expect(() => validate(data as any)).toThrow();
       });
       test("reservecountが存在している場合、例外が投げられること", () => {
         const data = {
           ...validDataTogether,
           reservecount: "1枚",
         };
-        expect(() => validate(data as any)).toThrowError();
+        expect(() => validate(data as any)).toThrow();
       });
     });
   });
@@ -154,14 +154,14 @@ describe("validate", () => {
           ...validDataOther,
           reservedate: "hoge",
         };
-        expect(() => validate(data as any)).toThrowError();
+        expect(() => validate(data as any)).toThrow();
       });
       test("reservecountが存在している場合、例外が投げられること", () => {
         const data = {
           ...validDataOther,
           reservecount: "1枚",
         };
-        expect(() => validate(data as any)).toThrowError();
+        expect(() => validate(data as any)).toThrow();
       });
     });
   });
