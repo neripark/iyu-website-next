@@ -7,7 +7,7 @@
   padding: 40px $side-padding-pc;
   background-color: $main-blue;
   border-top: 1px solid $white;
-  
+
   @include mq() {
     padding: 30px $side-padding-sp;
   }
