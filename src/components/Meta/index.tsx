@@ -4,7 +4,7 @@ export const Meta: React.FC = () => {
     <>
       {/* note: https://nextjs.org/docs/messages/no-page-custom-font の対策のためここに書いている */}
       <link
-        href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=optional"
+        href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=swap"
         rel="stylesheet"
       />
       <link
