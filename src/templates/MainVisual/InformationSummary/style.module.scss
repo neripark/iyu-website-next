@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../../styles" as *;
 @mixin selection-color() {
   &::selection {
     background: $main-blue;

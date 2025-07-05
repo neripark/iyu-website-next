@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../styles" as *;
 .live {
   background: $main-blue;
   padding-bottom: 50px;

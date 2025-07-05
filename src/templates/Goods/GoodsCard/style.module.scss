@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-@import "utils";
+@use "../../../styles" as *;
 
 .anchor {
   position: relative;

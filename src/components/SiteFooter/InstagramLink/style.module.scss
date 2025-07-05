@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../../styles" as *;
 .instagram {
   width: 40px;
   padding: 0 6px;

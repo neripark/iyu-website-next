@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../styles" as *;
 .site-floating-nav {
   position: absolute;
   z-index: 2;

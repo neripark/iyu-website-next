@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../../styles" as *;
 // todo: 共通化する
 @mixin selection-color() {
   &::selection {

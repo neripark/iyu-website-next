@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../styles" as *;
 .contact {
   background: $main-blue;
   padding: 0 $side-padding-pc 80px;
