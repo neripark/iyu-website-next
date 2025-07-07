@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../styles" as *;
 .gallery {
   background: $white;
   padding-bottom: 140px;

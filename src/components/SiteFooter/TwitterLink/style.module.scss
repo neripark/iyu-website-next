@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../../styles" as *;
 .twitter {
   overflow: hidden;
 }
