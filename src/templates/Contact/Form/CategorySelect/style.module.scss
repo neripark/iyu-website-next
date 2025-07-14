@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../../../styles" as *;
 .wrapper {
   text-align: right;
   .is-small {

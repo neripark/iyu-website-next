@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 
 @mixin loading-placeholder() {
   background: linear-gradient(to right, $light-gray, $gray, $light-gray);

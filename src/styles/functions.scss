@@ -1,6 +1,8 @@
 // for media query
+@use "sass:map";
+
 @mixin mq($breakpoint: sm) {
-  @media (#{map-get($breakpoints, $breakpoint)}) {
+  @media (#{map.get($breakpoints, $breakpoint)}) {
     @content;
   }
 }

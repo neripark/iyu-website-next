@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../styles" as *;
 .anchor-list {
   color: $white;
   width: 100%;
