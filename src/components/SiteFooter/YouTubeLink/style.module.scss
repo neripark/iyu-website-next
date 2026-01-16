@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../../styles" as *;
 .youtube {
   width: 40px;
   padding: 0 10px;
