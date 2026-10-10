@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../styles" as *;
 .root {
   position: relative;
   background-color: $light-yellow;

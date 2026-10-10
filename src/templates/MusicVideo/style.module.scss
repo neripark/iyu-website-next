@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../styles" as *;
 .music-video {
   width: 100%;
   padding: 0 $side-padding-pc 100px;

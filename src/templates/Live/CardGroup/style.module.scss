@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-
+@use "../../../styles" as *;
 .live-cards {
   max-width: 1000px;
   margin: 15px auto 0;
